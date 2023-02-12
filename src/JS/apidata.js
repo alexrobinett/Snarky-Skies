@@ -179,6 +179,7 @@ function GetDailyWeather(weather) {
     );
     dailyWeather.id = weather.daily[i].weather[0].id;
     dailyWeather.icon = weather.daily[i].weather[0].icon;
+    dailyWeather.main = weather.daily[i].weather[0].main;
     dailyWeather.chanceOfRain = `${weather.daily[i].pop * 100}%`;
     dailyWeather.lowTemp = `${Math.trunc(weather.daily[i].temp.min)}°`;
     dailyWeather.highTemp = `${Math.trunc(weather.daily[i].temp.max)}°`;

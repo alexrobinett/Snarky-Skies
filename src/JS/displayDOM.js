@@ -26,14 +26,24 @@ function displaySevenDayForecast(weatherData) {
 
   for (let i = 0; i < weatherData.length; i++) {
     const card = document.createElement('div');
-    card.className = 'bg-base-100 grid grid-cols-3 px-4 py-2 my-1 card';
+    card.className = 'glass bg-slate-100/15 drop-shadow-lg grid grid-cols-3 px-4 py-2 my-2 card';
 
     const day = document.createElement('span');
     day.className = 'self-center text-xl';
     day.innerText = `${weatherData[i].day}`;
 
+    const center = document.createElement('div');
+    center.className = 'flex flex-col justify-evenly items-center mt-1';
+
     const icon = document.createElement('i');
     icon.className = `wi wi-owm-${weatherData[i].id} text-2xl self-center text-center`;
+
+    const condition = document.createElement('span');
+    condition.className = 'font-light text-sm pt-1';
+    condition.innerText = `${weatherData[i].main}`;
+
+    center.appendChild(icon);
+    center.appendChild(condition);
 
     const temperature = document.createElement('div');
     temperature.className = 'flex flex-col items-end';
@@ -50,7 +60,7 @@ function displaySevenDayForecast(weatherData) {
     temperature.appendChild(low);
 
     card.appendChild(day);
-    card.appendChild(icon);
+    card.appendChild(center);
     card.appendChild(temperature);
 
     forecastContainer.appendChild(card);
@@ -90,7 +100,7 @@ function displayMinutePrecipitationData(weatherData) {
 
     progressElement.setAttribute(
       'class',
-      'progress progress-info w-36 -rotate-90 -translate-x-[4.20rem]'
+      'bg-slate-100/15  progress progress-info w-36 -rotate-90 -translate-x-[4.20rem]'
     );
 
     progressElement.setAttribute('value', `${weatherData[i]}`);
