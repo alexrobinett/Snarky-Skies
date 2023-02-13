@@ -52,6 +52,8 @@ const minutePrecipContainer = document.getElementById(
 );
 const forecastContainer = document.getElementById('Seven-Day-Container');
 
+console.log(currentWeather)
+
 async function updateWeather() {
   const weatherData = await getWeather(
     userLocation.lat,
