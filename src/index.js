@@ -27,10 +27,13 @@ import {
   shouldMinuteCardDisplay,
 } from './JS/displayDOM';
 
+import { currentMessages } from './JS/messages';
+
 const WEATHER_SEARCH_BUTTON = document.querySelector('#search-btn');
 const UNITS_BTN = document.querySelector('#units-btn');
 
 // navigator.geolocation.getCurrentPosition(successUserPos);
+
 
 let measurementUnits = 'imperial';
 let userLocation = await getUserLocation();
@@ -39,9 +42,10 @@ let currentWeather = getCurrentConditionData(
   await rawWeatherData,
   measurementUnits
 );
-const nextHourRain = willItRainNextHour(await rawWeatherData);
+let nextHourRain = willItRainNextHour(await rawWeatherData);
 let sevenDayWeather = GetDailyWeather(await rawWeatherData);
 let minuteDataHalf = combineMinutes(await rawWeatherData);
+const messages = currentMessages(currentWeather)
 
 const minutePrecipContainer = document.getElementById(
   'minute-pricip-container'
@@ -67,13 +71,15 @@ WEATHER_SEARCH_BUTTON.addEventListener('click', async (e) => {
   );
   sevenDayWeather = GetDailyWeather(await rawWeatherData);
   minuteDataHalf = combineMinutes(await rawWeatherData);
+  
 
   clearDisplay(minutePrecipContainer);
   clearDisplay(forecastContainer);
-  displayCurrentCondition(currentWeather, userLocation);
+  displayCurrentCondition(currentWeather, userLocation, messages);
   displaySevenDayForecast(sevenDayWeather);
   displayCardsData(currentWeather);
   displayMinutePrecipitationData(minuteDataHalf);
+  shouldMinuteCardDisplay(nextHourRain);
 });
 
 UNITS_BTN.addEventListener('click', async (e) => {
@@ -91,16 +97,18 @@ UNITS_BTN.addEventListener('click', async (e) => {
   clearDisplay(minutePrecipContainer);
   clearDisplay(forecastContainer);
   shouldMinuteCardDisplay(nextHourRain);
-  displayCurrentCondition(currentWeather, userLocation);
+  displayCurrentCondition(currentWeather, userLocation, messages);
   displaySevenDayForecast(sevenDayWeather);
   displayCardsData(currentWeather);
   displayMinutePrecipitationData(minuteDataHalf);
+  shouldMinuteCardDisplay(nextHourRain);
 });
 
-displayCurrentCondition(currentWeather, userLocation);
+displayCurrentCondition(currentWeather, userLocation, messages);
 displaySevenDayForecast(sevenDayWeather);
 displayCardsData(currentWeather);
 displayMinutePrecipitationData(minuteDataHalf);
-shouldMinuteCardDisplay(true);
+shouldMinuteCardDisplay(nextHourRain);
+
 
 export {};

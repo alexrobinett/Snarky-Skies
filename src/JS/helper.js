@@ -1,4 +1,5 @@
 import { getGeoInfo, GOOGLE_KEYS } from './apiData';
+import { currentMessages } from './messages';
 
 function removeSpaces(input = 'Atlanta GA') {
   return input.replace(' ', '%20');

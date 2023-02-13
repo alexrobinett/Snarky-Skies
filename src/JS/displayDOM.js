@@ -1,6 +1,8 @@
 /* eslint-disable no-plusplus */
 
-function displayCurrentCondition(weatherData, location) {
+import { currentMessages, returnMessage } from "./messages";
+
+function displayCurrentCondition(weatherData, location, messages) {
   // // Dom Cache
   const currentCityName = document.getElementById('city-name');
   const currentWeatherIcon = document.getElementById('current-weather-icon');
@@ -10,7 +12,7 @@ function displayCurrentCondition(weatherData, location) {
     'current-description'
   );
   const currentMessage = document.getElementById('current-message');
-  console.log(currentWeatherIcon);
+
   console.log(weatherData);
 
   currentCityName.innerText = location.city;
@@ -18,7 +20,7 @@ function displayCurrentCondition(weatherData, location) {
   currentTemp.innerText = weatherData.temp;
   feelsTemp.innerText = `feels ${weatherData.feel}`;
   currentWeatherDescription.innerText = weatherData.main;
-  currentMessage.innerText = `it's ${weatherData.temp} and ${weatherData.main}, you might want a rain jacket!`;
+  currentMessage.innerText = returnMessage(weatherData, messages);
 }
 
 function displaySevenDayForecast(weatherData) {
