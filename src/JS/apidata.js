@@ -56,12 +56,24 @@ function getCurrentConditionData(weather, units) {
   currentConditionData.humidity = `${weather.current.humidity}%`;
   currentConditionData.uvIndex = weather.current.uvi;
   currentConditionData.chanceOfRain = `${weather.daily[0].pop * 100}%`;
+  currentConditionData.time = new Date(
+    weather.current.dt * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   currentConditionData.sunrise = new Date(
     weather.current.sunrise * 1000
   ).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   currentConditionData.sunset = new Date(
     weather.current.sunset * 1000
   ).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+  currentConditionData.rawSunrise = weather.current.sunrise
+  currentConditionData.rawSunset = weather.current.sunset
+  currentConditionData.rawTime = weather.current.dt
+
+  currentConditionData.isDayLight = null
+
+  if (currentConditionData.rawTime > currentConditionData.sunrise && currentConditionData.rawTime < currentConditionData.sunset){
+    currentConditionData.isDayLight = true;
+  }else currentConditionData.isDayLight = false;
 
   if (
     (currentConditionData.windDirection > 0 &&

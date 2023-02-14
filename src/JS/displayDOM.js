@@ -14,13 +14,16 @@ function displayCurrentCondition(weatherData, location, messages) {
   const currentMessage = document.getElementById('current-message');
 
   console.log(weatherData);
-
   currentCityName.innerText = location.city;
-  currentWeatherIcon.classList.add(`wi-owm-${weatherData.id}`);
   currentTemp.innerText = weatherData.temp;
   feelsTemp.innerText = `feels ${weatherData.feel}`;
   currentWeatherDescription.innerText = weatherData.main;
   currentMessage.innerText = returnMessage(weatherData, messages);
+  if(weatherData.isDayLight === true){
+    currentWeatherIcon.classList.add(`wi-owm-day-${weatherData.id}`,"text-warning");
+  }else if (weatherData.isDayLight === false){
+    currentWeatherIcon.classList.add(`wi-owm-night-${weatherData.id}`,"text-secondary");
+  }
 }
 
 function displaySevenDayForecast(weatherData) {
