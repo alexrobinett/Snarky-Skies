@@ -19,8 +19,10 @@ function displayCurrentCondition(weatherData, location, messages) {
   feelsTemp.innerText = `feels ${weatherData.feel}`;
   currentWeatherDescription.innerText = weatherData.main;
   currentMessage.innerText = returnMessage(weatherData, messages);
-  if(weatherData.isDayLight === true){
+  if(weatherData.isDayLight === true && weatherData.main === "Clear" ){
     currentWeatherIcon.classList.add(`wi-owm-day-${weatherData.id}`,"text-warning");
+  }else  if(weatherData.isDayLight === true){
+    currentWeatherIcon.classList.add(`wi-owm-day-${weatherData.id}`,"text-secondary");
   }else if (weatherData.isDayLight === false){
     currentWeatherIcon.classList.add(`wi-owm-night-${weatherData.id}`,"text-secondary");
   }

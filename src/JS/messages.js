@@ -90,13 +90,13 @@ function currentMessages(weatherData){
       ],
     messages.drizzle =[
         `Just what I wanted: a day of drizzle.`,
-        `Drizzle and a ${weatherData.feel} temp, lovely.`,
+        `Drizzle and a ${weatherData.temp} temp, lovely.`,
         `Today's forecast: drizzle.`,
-        `Drizzle and a ${weatherData.feel} temp, just peachy.`,
+        `Drizzle and a ${weatherData.temp} temp, just peachy.`,
         `The drizzle just adds to the charm of this weather.`,
-        `A day of drizzle and a ${weatherData.feel} temp, delightful.`,
+        `A day of drizzle and a ${weatherData.temp} temp, delightful.`,
         `Drizzle, what more could I ask for?`,
-        `Today's highlight: drizzle and a ${weatherData.feel} temp.`,
+        `Today's highlight: drizzle and a ${weatherData.temp} temp.`,
         `Drizzle, woo-hoo.`,
         `Drizzle, yay!`,
         `Why bother with a shower when you have the drizzle to get you soaked?`,
@@ -111,38 +111,38 @@ function currentMessages(weatherData){
         `Drizzle: when you want a shower, but also want to keep your hair intact.`
       ],
     messages.snow = [
-        `Looks like snow, feels like winter. And it's a nippy ${weatherData.feel} out there.`,
-        `Snow, snow, go away. But at least it's a cozy ${weatherData.feel}.`,
-        `Why does snow have to be so darn cold? It's a blistering ${weatherData.feel} outside.`,
-        `Snow day!... or not. But it's still a frozen ${weatherData.feel}.`,
-        `Snow is supposed to be magical, right? Can't say the same about this ${weatherData.feel} weather.`,
-        `It's snowing! Time to break out the sleds... or not. But it's still a cold ${weatherData.feel}.`,
-        `Snowflakes, snowflakes, everywhere. And the temperature is a chilly ${weatherData.feel}.`,
-        `Snow is great for building snowmen... if your fingers don't freeze first. It's ${weatherData.feel} outside.`,
-        `Snow is like nature's confetti. And it's a crisp ${weatherData.feel} outside.`,
-        `Snow, snow, snow. Time to break out the hot cocoa. And it's a freezing ${weatherData.feel} outside.`,
-        `Snow, snow, go away. Come again some other day. And it's a bitter ${weatherData.feel} outside.`,
-        `Snow is like a winter wonderland... if you ignore the cold. And it's a ${weatherData.feel} outside.`,
-        `Snow, snow, snow. It's like a never-ending winter show. And it's a frozen ${weatherData.feel} outside.`,
-        `Snow, snow, don't go. But can it be warmer? It's a chilly ${weatherData.feel} outside.`,
-        `Snow is so beautiful, until you have to shovel it. And it's a nippy ${weatherData.feel} outside.`,
-        `Snow, snow, snow. Can't we have some sunshine, though? And it's a bitter ${weatherData.feel} outside.`,
-        `Snow, snow, snow. Time to make some snow ice cream, no? And it's a cold ${weatherData.feel} outside.`,
-        `Snow, snow, snow. Can we have a break? And it's a crisp ${weatherData.feel} outside.`,
-        `Snow is so serene... until you slip on it. And it's a freezing ${weatherData.feel} outside.`,
-        `Snow is like a winter dream... that you never want to end. And it's a nippy ${weatherData.feel} outside.`
+        `Looks like snow, feels like winter. And it's a nippy ${weatherData.temp} out there.`,
+        `Snow, snow, go away. But at least it's a cozy ${weatherData.temp}.`,
+        `Why does snow have to be so darn cold? It's a blistering ${weatherData.temp} outside.`,
+        `Snow day!... or not. But it's still a frozen ${weatherData.temp}.`,
+        `Snow is supposed to be magical, right? Can't say the same about this ${weatherData.temp} weather.`,
+        `It's snowing! Time to break out the sleds... or not. But it's still a cold ${weatherData.temp}.`,
+        `Snowflakes, snowflakes, everywhere. And the temperature is a chilly ${weatherData.temp}.`,
+        `Snow is great for building snowmen... if your fingers don't freeze first. It's ${weatherData.temp} outside.`,
+        `Snow is like nature's confetti. And it's a crisp ${weatherData.temp} outside.`,
+        `Snow, snow, snow. Time to break out the hot cocoa. And it's a freezing ${weatherData.temp} outside.`,
+        `Snow, snow, go away. Come again some other day. And it's a bitter ${weatherData.temp} outside.`,
+        `Snow is like a winter wonderland... if you ignore the cold. And it's a ${weatherData.temp} outside.`,
+        `Snow, snow, snow. It's like a never-ending winter show. And it's a frozen ${weatherData.temp} outside.`,
+        `Snow, snow, don't go. But can it be warmer? It's a chilly ${weatherData.temp} outside.`,
+        `Snow is so beautiful, until you have to shovel it. And it's a nippy ${weatherData.temp} outside.`,
+        `Snow, snow, snow. Can't we have some sunshine, though? And it's a bitter ${weatherData.temp} outside.`,
+        `Snow, snow, snow. Time to make some snow ice cream, no? And it's a cold ${weatherData.temp} outside.`,
+        `Snow, snow, snow. Can we have a break? And it's a crisp ${weatherData.temp} outside.`,
+        `Snow is so serene... until you slip on it. And it's a freezing ${weatherData.temp} outside.`,
+        `Snow is like a winter dream... that you never want to end. And it's a nippy ${weatherData.temp} outside.`
       ],
     messages.cloudsDay = [
-        `This gray sky and ${weatherData.feel} temp? Joyful.`,
-        `Perfect weather for staying in: clouds and ${weatherData.feel} temp.`,
-        `Another day under clouds, yay. Temp is ${weatherData.feel}.`,
-        `Clouds ruining the sun. At least it's ${weatherData.feel}.`,
-        `Clouds blocking the sun and temp is ${weatherData.feel}.`,
-        `Gray sky, no sun. It's ${weatherData.feel}.`,
-        `Clouds giggling, temp is ${weatherData.feel}.`,
-        `Clouds having a field day, temp is ${weatherData.feel}.`,
-        `Another day, another cloud. Temp is ${weatherData.feel}.`,
-        `Clouds feeling sluggish, temp is ${weatherData.feel}.`
+        `This gray sky and ${weatherData.temp} temp? Joyful.`,
+        `Perfect weather for staying in: clouds and ${weatherData.temp} temp.`,
+        `Another day under clouds, yay. Temp is ${weatherData.temp}.`,
+        `Clouds ruining the sun. At least it's ${weatherData.temp}.`,
+        `Clouds blocking the sun and temp is ${weatherData.temp}.`,
+        `Gray sky, no sun. It's ${weatherData.temp}.`,
+        `Clouds giggling, temp is ${weatherData.temp}.`,
+        `Clouds having a field day, temp is ${weatherData.temp}.`,
+        `Another day, another cloud. Temp is ${weatherData.temp}.`,
+        `Clouds feeling sluggish, temp is ${weatherData.temp}.`
       ],
       messages.cloudsNight = [
         "Cloudy night ahead, perfect for some moody introspection or Netflix binging.",
@@ -168,7 +168,7 @@ function returnMessage(weatherData , message){
     } if(weatherData.main === "Clouds" && weatherData.isDayLight === true){
         return message.cloudsDay[Math.floor(Math.random() * message.cloudsDay.length)]
     } if(weatherData.main === "Clouds" && weatherData.isDayLight === false){
-         return message.CloudsNight[Math.floor(Math.random() * message.cloudsNight.length)]
+         return message.cloudsNight[Math.floor(Math.random() * message.cloudsNight.length)]
     } if(weatherData.main === "Clear" && weatherData.isDayLight === true){
         return message.clearDay[Math.floor(Math.random() * message.clearDay.length)]
     } if(weatherData.main === "Clear" && weatherData.isDayLight === false){

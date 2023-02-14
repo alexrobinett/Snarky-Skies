@@ -71,7 +71,7 @@ function getCurrentConditionData(weather, units) {
 
   currentConditionData.isDayLight = null
 
-  if (currentConditionData.rawTime > currentConditionData.sunrise && currentConditionData.rawTime < currentConditionData.sunset){
+  if (currentConditionData.rawTime > currentConditionData.rawSunrise && currentConditionData.rawTime < currentConditionData.rawSunset){
     currentConditionData.isDayLight = true;
   }else currentConditionData.isDayLight = false;
 

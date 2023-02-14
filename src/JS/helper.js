@@ -47,7 +47,6 @@ async function getUserLocation() {
     : JSON.parse(localStorage.getItem('userLocationWeather'));
 }
 
-function changeIconColor(weather) {}
 
 export {
   removeSpaces,
