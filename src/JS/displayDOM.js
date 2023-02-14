@@ -98,10 +98,12 @@ function displayCardsData(weatherData) {
   );
 }
 
-function displayMinutePrecipitationData(weatherData) {
+function displayMinutePrecipitationData(weatherData,currentWeather) {
+  const nextHourMessage = document.getElementById("next-hour-message");
   const minutePrecipContainer = document.getElementById(
     'minute-pricip-container'
   );
+  nextHourMessage.innerText = `Next Hour: ${currentWeather.description}`
   for (let i = 0; i < weatherData.length; i++) {
     const progressElement = document.createElement('progress');
 

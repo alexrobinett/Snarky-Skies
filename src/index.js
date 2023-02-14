@@ -102,14 +102,14 @@ UNITS_BTN.addEventListener('click', async (e) => {
   displayCurrentCondition(currentWeather, userLocation, messages);
   displaySevenDayForecast(sevenDayWeather);
   displayCardsData(currentWeather);
-  displayMinutePrecipitationData(minuteDataHalf);
+  displayMinutePrecipitationData(minuteDataHalf, currentWeather);
   shouldMinuteCardDisplay(nextHourRain);
 });
 
 displayCurrentCondition(currentWeather, userLocation, messages);
 displaySevenDayForecast(sevenDayWeather);
 displayCardsData(currentWeather);
-displayMinutePrecipitationData(minuteDataHalf);
+displayMinutePrecipitationData(minuteDataHalf, currentWeather);
 shouldMinuteCardDisplay(nextHourRain);
 
 
