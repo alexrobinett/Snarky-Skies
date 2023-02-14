@@ -1,6 +1,18 @@
 function currentMessages(weatherData){
     const messages = {}
-    messages.rain = [
+    messages.rainNight = [
+      "Rain, rain, go away... actually, never mind, I'm staying in tonight.",
+      "It's raining men - or is it cats and dogs? Hard to tell in this downpour.",
+      "The temperature may be dropping, but my dance moves are heating up!",
+      "No need to water the plants tonight, Mother Nature's got it covered.",
+      "It's raining outside, but I'm inside, so I don't care what the temperature is.",
+      "The best part of a rainy night? Curling up with a good book and a cozy blanket.",
+      "The rain is falling like my hopes and dreams... but at least I'm cozy!",
+      "Who needs a shower when you can just walk outside on a rainy night?",
+      "Rain at night is like a lullaby from Mother Nature - soothing and calming.",
+      "The temperature may be chilly, but my heart is warm and fuzzy with this rainy night."
+    ],
+      messages.rainDay = [
         `Rain, rain, go away! But since you're here, I'll need my trusty umbrella.`,
         `Oh, yay! It's raining cats and dogs. Better bring an umbrella or risk turning into a drowned rat.`,
         `Rain, rain, don't go away! Just bring a tiny bit less of it and an umbrella for me.`,
@@ -22,7 +34,7 @@ function currentMessages(weatherData){
         `Rainy days are great for practicing your duck-and-cover skills.`,
         `Why does everyone hate the rain? It's just nature's way of giving us a much-needed shower.`
       ],
-    messages.clear = [
+    messages.clearDay = [
         `The sun is shining, clear skies ahead with UV index of ${weatherData.uvIndex}.`,
         `Clear day, time to squint with UV index of ${weatherData.uvIndex}.`,
         `Clear sky, no clouds, just sun and UV index of ${weatherData.uvIndex}.`,
@@ -43,6 +55,16 @@ function currentMessages(weatherData){
         `When life gives you clear skies, make sun-tea.`,
         `Why settle for just one clear day when you can have a whole week?`,
         `Go ahead and rub your eyes, the clear sky is real!`
+      ],
+      messages.clearNight = [
+        "Clear skies tonight, perfect for stargazing! Make a wish on a shooting star or a satellite, your choice.",
+        "Weather tonight: clear skies, million stars. Romantic walks or music video vibes, take your pick.",
+        "Forecast tonight: clear skies, potential for existential contemplation about the universe's vastness.",
+        "Clear night, tinfoil hat not required. No alien invasions on the horizon!",
+        "Good news, it's clear! Vampire worries can take the night off...unless you're in Mystic Falls.",
+        "Clear night, get ready to moon-gaze and mandatory howling.",
+        "It's clear, impress your friends with meteorological jargon like 'stratospheric cooling' and 'radiative cooling.'",
+        "Clear skies, accidental constellation-making with Christmas lights is a risk."
       ],
     messages.thunderstorm = [
         `Bring on the thunderstorms and don't forget the umbrellas.`,
@@ -110,7 +132,7 @@ function currentMessages(weatherData){
         `Snow is so serene... until you slip on it. And it's a freezing ${weatherData.feel} outside.`,
         `Snow is like a winter dream... that you never want to end. And it's a nippy ${weatherData.feel} outside.`
       ],
-    messages.clouds = [
+    messages.cloudsDay = [
         `This gray sky and ${weatherData.feel} temp? Joyful.`,
         `Perfect weather for staying in: clouds and ${weatherData.feel} temp.`,
         `Another day under clouds, yay. Temp is ${weatherData.feel}.`,
@@ -121,29 +143,41 @@ function currentMessages(weatherData){
         `Clouds having a field day, temp is ${weatherData.feel}.`,
         `Another day, another cloud. Temp is ${weatherData.feel}.`,
         `Clouds feeling sluggish, temp is ${weatherData.feel}.`
-      ]
+      ],
+      messages.cloudsNight = [
+        "Cloudy night ahead, perfect for some moody introspection or Netflix binging.",
+        "Tonight's forecast: cloudy with a chance of animal impressions - foghorn or cow, your choice.",
+        "Clouds are rolling in tonight, but fear not: there's still a chance for a stunning sunset.",
+        "Cloudy night, perfect for serenading your significant other (just make sure your guitar is waterproof).",
+        "On a cloudy night, let your imagination run wild - the possibilities are endless.",
+        "The weather tonight: cloudy with a high chance of getting cozy with a good book and hot cocoa.",
+        "Clouds are nature's cozy blankets, wrapping us up in a warm embrace on a chilly night.",
+        "Cloudy nights are the best for playing hide and seek with the moon (just watch out for those sneaky clouds).",
+        "Tonight's forecast: clouds and a high chance of interpretive dance performances inspired by the shapes in the sky.",
+        "It may be cloudy tonight, but at least you won't accidentally start a forest fire with your marshmallow roasting skills."
+      ];
 
     return messages
 }
 
 function returnMessage(weatherData , message){
-    if(weatherData.main === "Rain"){
-        console.log(message.rain[Math.floor(Math.random() * message.rain.length)])
-        return message.rain[Math.floor(Math.random() * message.rain.length)]
-    } if(weatherData.main === "Clear"){
-        console.log(message.clear[Math.floor(Math.random() * message.clear.length)])
-        return message.clear[Math.floor(Math.random() * message.clear.length)]
+    if(weatherData.main === "Rain" && weatherData.isDayLight === true){
+        return message.rainDay[Math.floor(Math.random() * message.rainDay.length)]
+    } if(weatherData.main === "Rain" && weatherData.isDayLight === false){
+        return message.rainNight[Math.floor(Math.random() * message.rainNight.length)]
+    } if(weatherData.main === "Clouds" && weatherData.isDayLight === true){
+        return message.cloudsDay[Math.floor(Math.random() * message.cloudsDay.length)]
+    } if(weatherData.main === "Clouds" && weatherData.isDayLight === false){
+         return message.CloudsNight[Math.floor(Math.random() * message.cloudsNight.length)]
+    } if(weatherData.main === "Clear" && weatherData.isDayLight === true){
+        return message.clearDay[Math.floor(Math.random() * message.clearDay.length)]
+    } if(weatherData.main === "Clear" && weatherData.isDayLight === false){
+        return message.clearNight[Math.floor(Math.random() * message.clearNight.length)]
     } if(weatherData.main === "Snow"){
-        console.log(message.snow[Math.floor(Math.random() * message.snow.length)])
         return message.snow[Math.floor(Math.random() * message.snow.length)]
-    } if(weatherData.main === "Clouds"){
-        console.log(message.clouds[Math.floor(Math.random() * message.clouds.length)])
-        return message.clouds[Math.floor(Math.random() * message.clouds.length)]
     } if(weatherData.main === "Drizzle"){
-        console.log(message.rain[Math.floor(Math.random() * message.drizzle.length)])
         return message.drizzle[Math.floor(Math.random() * message.drizzle.length)]
     } if(weatherData.main === "Thunderstorm"){
-        console.log(message.thunderstorm[Math.floor(Math.random() * message.thunderstorm.length)])
         return message.thunderstorm[Math.floor(Math.random() * message.thunderstorm.length)]
     }
 }

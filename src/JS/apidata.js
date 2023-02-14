@@ -152,7 +152,9 @@ function getCurrentConditionData(weather, units) {
     currentConditionData.windDirection <= 337.5
   ) {
     currentConditionData.windDirection = 'NNW';
-  } else console.log('ERROR Wind Direction not working');
+  } else if (currentConditionData.windDirection === 0 ){
+    currentConditionData.windDirection = "CALM"
+  }
 
   return currentConditionData;
 }
