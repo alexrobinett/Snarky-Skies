@@ -32,7 +32,9 @@ async function successUserPos(pos) {
 function getUserCityValue() {
   const city = document.querySelector('#city-input').value;
   document.querySelector('#city-input').value = '';
-  return city;
+  if (city.length > 1){
+    return city
+  }else alert("Error: Please enter a city")
 }
 
 async function getInputLocation(input) {
