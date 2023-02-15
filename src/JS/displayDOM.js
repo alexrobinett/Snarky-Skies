@@ -1,5 +1,7 @@
 /* eslint-disable no-plusplus */
 
+
+import "../images/github-mark.png"
 import { currentMessages, returnMessage } from "./messages";
 
 function displayCurrentCondition(weatherData, location, messages) {
