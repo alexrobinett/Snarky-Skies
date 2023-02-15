@@ -104,19 +104,60 @@ function displayMinutePrecipitationData(weatherData,currentWeather) {
     'minute-pricip-container'
   );
   nextHourMessage.innerText = `Next Hour: ${currentWeather.description}`;
-  
+
   for (let i = 0; i < weatherData.length; i++) {
     const progressElement = document.createElement('progress');
 
     progressElement.setAttribute(
       'class',
-      'bg-slate-100/15  progress progress-info w-36 -rotate-90 -translate-x-[4.20rem]'
+      'bg-transparent progress progress-info w-36 -rotate-90 -translate-x-[4.40rem]'
     );
 
     progressElement.setAttribute('value', `${weatherData[i]}`);
-    progressElement.setAttribute('max', '15');
+    progressElement.setAttribute('max', '7.5');
 
     minutePrecipContainer.appendChild(progressElement);
+  }
+}
+
+function displayHourlyWeather(weatherData) {
+  const hourlyContainer = document.getElementById(
+    'hourly-container'
+  );
+  
+  for (let i = 0; i < weatherData.length; i++) {
+    const card = document.createElement('div');
+    card.className = 'glass bg-slate-100/0 drop-shadow-lg grid grid-cols-4 px-4 py-2 my-2 card';
+
+    const timeSpan = document.createElement('span');
+    timeSpan.className = 'self-center text-md';
+    timeSpan.textContent = `${weatherData[i].time}`;
+    
+    const weatherIcon = document.createElement('i');
+    weatherIcon.className = `wi wi-owm-${weatherData[i].id} text-xl self-center text-center`;
+
+    const temperatureDiv = document.createElement('div');
+    temperatureDiv.className = 'flex flex-col items-center justify-center';
+    const temperatureSpan = document.createElement('span');
+    temperatureSpan.className = 'font-light';
+    temperatureSpan.textContent = `${weatherData[i].temp}`;
+    temperatureDiv.appendChild(temperatureSpan);
+
+    const rainDiv = document.createElement('div');
+    rainDiv.className = 'flex items-center justify-end';
+    const rainIcon = document.createElement('i');
+    rainIcon.className = 'wi wi-raindrops text-2xl self-center text-center px-2';
+    const rainSpan = document.createElement('span');
+    rainSpan.className = 'text-right';
+    rainSpan.textContent = `${weatherData[i].chanceOfRain}%`;
+    rainDiv.appendChild(rainIcon);
+    rainDiv.appendChild(rainSpan);
+    
+    card.appendChild(timeSpan);
+    card.appendChild(weatherIcon);
+    card.appendChild(temperatureDiv);
+    card.appendChild(rainDiv);
+    hourlyContainer.appendChild(card);
   }
 }
 
@@ -140,4 +181,5 @@ export {
   displayMinutePrecipitationData,
   clearDisplay,
   shouldMinuteCardDisplay,
+  displayHourlyWeather
 };

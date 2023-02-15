@@ -159,6 +159,28 @@ function getCurrentConditionData(weather, units) {
   return currentConditionData;
 }
 
+
+function getHourlyWeatherData(weather){
+  const hourlyWeatherData = [];
+  for (let i = 1; i < 13; i++){
+    let hour = {}
+    hour.time = new Date(
+      weather.hourly[i].dt * 1000).toLocaleTimeString([], { hour: '2-digit' });
+    hour.id = weather.hourly[i].weather[0].id
+    hour.temp =  `${Math.trunc(weather.hourly[i].temp)}°`;
+    hour.chanceOfRain =  weather.hourly[i].pop * 100;
+
+    if (hour.time[0] === "0"){
+      hour.time = hour.time.replace("0","")
+    }
+
+    hourlyWeatherData.push(hour)
+  }
+
+  return hourlyWeatherData
+}
+
+
 function willItRainNextHour(weather) {
   const nextHourData = weather.minutely;
   let precipPercentage = 0;
@@ -170,16 +192,14 @@ function willItRainNextHour(weather) {
 
 function combineMinutes(weather) {
   const nextHourData = weather.minutely;
-  let addedMinutes = [];
+  let Minutes = [];
   for (let i = 0; i < nextHourData.length - 1; i++) {
-    if (i % 2 === 0) {
-      addedMinutes.push(
-        nextHourData[i].precipitation + nextHourData[i + 1].precipitation
-      );
+      Minutes.push( nextHourData[i].precipitation);
     }
-  }
-  return addedMinutes;
+  return Minutes;
 }
+
+
 
 function GetDailyWeather(weather) {
   const sevenDailyWeatherForecast = [];
@@ -212,4 +232,5 @@ export {
   getGeoInfo,
   combineMinutes,
   GOOGLE_KEYS,
+  getHourlyWeatherData
 };
