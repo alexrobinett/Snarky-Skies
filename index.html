@@ -37,8 +37,8 @@
             </div>
           </div>
           <div class="flex flex-col w-full">
-            <div class=" mx-8 my-4 card  flex justify-center glass drop-shadow">
-                <div class="grid grid-cols-5 grid-rows-3 max-w-lg place-self-center">
+            <div class=" mx-8 my-4 card  flex justify-center glass drop-shadow max-w-3xl self-center">
+                <div class="grid grid-cols-5 grid-rows-3 max-w-lg place-self-center ">
                   <span id="city-name" class="text-3xl text-center col-start-1 col-end-6 py-4 self-center">Atlanta</span>
                   <div class="col-start-2 col-end-5 flex justify-evenly">
                     <div class="flex flex-col justify-evenly">
@@ -55,10 +55,11 @@
                 </div>
               </div>
           </div>
-          <div id="Precip-Card" class="drop-shadow-xl glass bg-slate-100/15 card m-2 mx-8 flex flex-col ">
+          
+          <div id="Precip-Card" class="drop-shadow-xl glass bg-slate-100/15 card m-2 mx-8 flex flex-col max-w-3xl self-center">
             <div class="flex flex-col justify-center px-4" >
-              <span id="next-hour-message" class="text-center text-xl">Next Hour: Light Rain</span>
-              <div id="minute-pricip-container" class="grid grid-cols-[repeat(30,minmax(1px,_30px))] gap-2 justify-center  mx-2 pt-24 h-40" >
+              <span id="next-hour-message" class="text-center text-xl mt-2">Next Hour: Light Rain</span>
+              <div id="minute-pricip-container" class="grid grid-cols-[repeat(60,minmax(1px,_8px))] gap-0.5 justify-center  mx-2 pt-24 h-40 sm:gap-1 lg:gap-2" >
               
               </div>
                 <div class="h-10 border-t-4 border-solid border-accent flex justify-between mt-4">
@@ -71,13 +72,23 @@
                 </div>
             </div>
           </div>
+          <div>
+            <div class="grid rounded-box place-items-center my-2 mx-4 mt-0 card self-center">
+              <span class="text-xl mt-2 font-semibold">Next 12 Hours</span>
+              <div id="hourly-container" class="grid grid-cols-1 w-11/12 pt-2 mb-2 pb-2 max-w-lg">
+
+            </div>
+              <div class="flex justify-around h-2"></div>
+            </div>
+          </div>
           <div class="grid rounded-box place-items-center my-2 mx-4 mt-0 card">
+            <span class="text-xl font-semibold">Next 7 Days</span>
             <div id="Seven-Day-Container" class="grid  grid-rows-6  w-11/12 pt-5 max-w-lg">
             </div>
             <div class="flex justify-around"></div>
           </div>
           <div class="grid rounded-box place-items-center mt-0  mx-4 card">
-            <div class="grid  grid-rows-8 grid-cols-2 w-11/12 pt-4 mr-3max-w-lg">
+            <div class="grid  grid-rows-8 grid-cols-2 w-11/12 pt-4 mr-3 max-w-lg">
               <div class="glass bg-slate-100/15 drop-shadow-lg grid  grid-cols-3 px-4 py-2 my-2 mr-2 card">
                 <div class="flex flex-col items-start flex-wrap col-span-2">
                   <span class="font-light text-sm">SUNRISE</span>

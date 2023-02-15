@@ -1,1 +1,155 @@
-<!doctype html><html lang="en" data-theme=""><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Snarky Sky</title><script defer="defer" src="main.js"></script></head><body><main><div class="navbar bg-primary text-primary-content sticky top-0 z-10 grid grid-cols-3 grid-rows-1"><div class="col-span-1 justify-center"><a class="p-2 pnormal-case text-3xl font-semibold text-center justify-center text-neutral">Snarky Skies</a></div><div class="grid col-span-2 gap-2 grid-cols-4 mb-2 mx-2"><button class="btn btn-secondary btn-xs text-primary-content w-14 col-start-3 col-end-5 justify-self-end"><label class="swap"><input id="units-btn" type="checkbox"/><div value="f" class="swap-off">F°</div><div value="c" class="swap-on">C°</div></label></button><div class="flex gap-2 row-start-2 col-span-4 justify-end"><div class="form-control"><input id="city-input" placeholder="Search for City" class="input w-full max-w-xs justify-self-end text-black"/></div><button id="search-btn" class="btn btn-secondary">GO!</button></div></div></div><div class="hidden flex mx-4"><div class="alert alert-error shadow-lg mt-4"><div><svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> <span>Special Weather Alert!</span></div></div></div><div class="flex flex-col w-full"><div class="mx-8 my-4 card flex justify-center glass drop-shadow"><div class="grid grid-cols-5 grid-rows-3 max-w-lg place-self-center"><span id="city-name" class="text-3xl text-center col-start-1 col-end-6 py-4 self-center">Atlanta</span><div class="col-start-2 col-end-5 flex justify-evenly"><div class="flex flex-col justify-evenly"><i id="current-weather-icon" class="wi text-5xl"></i> <span id="current-description" class="text-center pt-1"></span></div><div class="flex flex-col justify-evenly"><span id="current-temp" class="text-5xl"></span> <span id="feels-temp" class="pt-1.5">Feels 69°</span></div></div><div class="col-start-2 col-end-5 flex py-5"><p id="current-message" class="text-center">it's Sunny Go Get Beer!</p></div></div></div><div id="Precip-Card" class="drop-shadow-xl glass bg-slate-100/15 card m-2 mx-8 flex flex-col"><div class="flex flex-col justify-center px-4"><span id="next-hour-message" class="text-center text-xl">Next Hour: Light Rain</span><div id="minute-pricip-container" class="grid grid-cols-[repeat(30,minmax(1px,_30px))] gap-2 justify-center mx-2 pt-24 h-40"></div><div class="h-10 border-t-4 border-solid border-accent flex justify-between mt-4"><span>now</span> <span>10m</span> <span>15m</span> <span>30m</span> <span>45m</span> <span>60m</span></div></div></div><div class="grid rounded-box place-items-center my-2 mx-4 mt-0 card"><div id="Seven-Day-Container" class="grid grid-rows-6 w-11/12 pt-5 max-w-lg"></div><div class="flex justify-around"></div></div><div class="grid rounded-box place-items-center mt-0 mx-4 card"><div class="grid grid-rows-8 grid-cols-2 w-11/12 pt-4 mr-3max-w-lg"><div class="glass bg-slate-100/15 drop-shadow-lg grid grid-cols-3 px-4 py-2 my-2 mr-2 card"><div class="flex flex-col items-start flex-wrap col-span-2"><span class="font-light text-sm">SUNRISE</span> <span id="Sunrise-Time" class="font-medium">07:02 PM</span></div><i class="wi wi-sunrise text-2xl self-center text-center text-warning"></i></div><div class="glass bg-slate-100/15 drop-shadow-lg grid grid-cols-3 px-4 py-2 ml-2 my-2 card"><div class="flex flex-col items-start col-span-2"><span class="font-light text-sm">SUNSET</span> <span id="Sunset-Time" class="font-medium">4:20 PM</span></div><i class="wi wi-sunset text-2xl self-center text-center text-warning"></i></div><div class="glass bg-slate-100/15 drop-shadow-lg grid grid-cols-3 px-4 py-2 my-2 mr-2 card"><div class="flex flex-col items-start flex-wrap col-span-2"><span class="font-light text-sm">RAIN</span> <span id="Chance-Rain-Percent" class="font-medium">56%</span></div><i class="wi wi-raindrop text-2xl self-center text-center text-secondary"></i></div><div class="glass bg-slate-100/15 drop-shadow-lg grid grid-cols-3 px-4 py-2 ml-2 my-2 card"><div class="flex flex-col items-start col-span-2"><span class="font-light text-sm">HUMIDITY</span> <span id="Humidity-Percent" class="font-medium">69%</span></div><i class="wi wi-humidity text-2xl self-center text-center text-secondary"></i></div><div class="glass bg-slate-100/15 drop-shadow-lg grid grid-cols-3 px-4 py-2 my-2 mr-2 card"><div class="flex flex-col items-start flex-wrap col-span-2"><span class="font-light text-sm">WIND FROM</span> <span id="Wind-Direction-Speed" class="font-medium">SE 5 MPH</span></div><i id="Wind-Direction-Icon" class="wi wi-wind text-2xl self-center text-center"></i></div><div class="glass bg-slate-100/15 drop-shadow-lg grid grid-cols-3 px-4 py-2 ml-2 my-2 card"><div class="flex flex-col items-start col-span-2"><span class="font-light text-sm">FEELS LIKE</span> <span id="feels-like-card" class="font-medium">69°</span></div><i class="wi wi-thermometer text-2xl self-center text-center"></i></div><div class="glass bg-slate-100/15 drop-shadow-lg grid grid-cols-3 px-4 py-2 my-2 mr-2 card"><div class="flex flex-col items-start flex-wrap col-span-2"><span class="font-light text-sm">PRESSURE</span> <span id="Pressure-Data" class="font-medium">1022 hPa</span></div><i class="wi wi-barometer text-2xl self-center text-center"></i></div><div class="glass bg-slate-100/15 drop-shadow-lg grid grid-cols-3 px-4 py-2 ml-2 my-2 card"><div class="flex flex-col items-start col-span-2"><span class="font-light text-sm">UV INDEX</span> <span id="UV-Index-Data" class="font-medium">1.4</span></div><i class="wi wi-day-sunny wi-flip-vertical text-2xl self-center text-center text-warning"></i></div><div class="mb-4 flex justify-around"></div></div></div></div></main><script src="/dist/main.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en" data-theme="">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snarky Sky</title>
+<script defer src="main.js"></script></head>
+<body>
+    <main>
+        <div class="navbar bg-primary text-primary-content sticky top-0 z-10 grid grid-cols-3 grid-rows-1">
+          <div class="col-span-1 justify-center">
+              <a class="p-2 pnormal-case text-3xl font-semibold text-center justify-center text-neutral">Snarky Skies</a>
+          </div>
+            <div class="grid col-span-2 gap-2 grid-cols-4  mb-2 mx-2">
+              <button class="btn btn-secondary btn-xs text-primary-content w-14 col-start-3 col-end-5 justify-self-end">
+                <label class="swap">
+                  <input id="units-btn" type="checkbox" />
+                  <div value="f" class="swap-off">F°</div>
+                  <div value="c" class="swap-on">C°</div>
+                </label>
+              </button>
+              <div class="flex gap-2 row-start-2 col-span-4 justify-end">
+                <div class="form-control">
+                  <input type="text" id="city-input" placeholder="Search for City" class="input w-full max-w-xs justify-self-end text-black" />
+                </div>
+                <button id="search-btn" class="btn btn-secondary">GO!</button>
+              </div>
+            </div>
+          </div>
+          <div class="hidden flex mx-4">
+            <div class="alert alert-error shadow-lg mt-4">
+              <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span>Special Weather Alert!</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col w-full">
+            <div class=" mx-8 my-4 card  flex justify-center glass drop-shadow max-w-3xl self-center">
+                <div class="grid grid-cols-5 grid-rows-3 max-w-lg place-self-center ">
+                  <span id="city-name" class="text-3xl text-center col-start-1 col-end-6 py-4 self-center">Atlanta</span>
+                  <div class="col-start-2 col-end-5 flex justify-evenly">
+                    <div class="flex flex-col justify-evenly">
+                      <i id="current-weather-icon" class="wi text-5xl"></i>
+                      <span id="current-description"class="text-center pt-1"></span>
+                    </div>
+                    <div class="flex flex-col justify-evenly ">
+                      <span id="current-temp" class="text-5xl"></span>
+                      <span id="feels-temp" class="pt-1.5">Feels 69°</span>
+                    </div>
+                  </div>
+                <div class="col-start-2 col-end-5 flex py-5">
+                    <p  id="current-message" class="text-center">it's Sunny Go Get Beer!</p>
+                </div>
+              </div>
+          </div>
+          
+          <div id="Precip-Card" class="drop-shadow-xl glass bg-slate-100/15 card m-2 mx-8 flex flex-col max-w-3xl self-center">
+            <div class="flex flex-col justify-center px-4" >
+              <span id="next-hour-message" class="text-center text-xl mt-2">Next Hour: Light Rain</span>
+              <div id="minute-pricip-container" class="grid grid-cols-[repeat(60,minmax(1px,_8px))] gap-0.5 justify-center  mx-2 pt-24 h-40 sm:gap-1 lg:gap-2" >
+              
+              </div>
+                <div class="h-10 border-t-4 border-solid border-accent flex justify-between mt-4">
+                  <span>now</span>
+                  <span>10m</span>
+                  <span>15m</span>
+                  <span>30m</span>
+                  <span>45m</span>
+                 <span>60m</span>
+                </div>
+            </div>
+          </div>
+          <div>
+            <div class="grid rounded-box place-items-center my-2 mx-4 mt-0 card self-center">
+              <span class="text-xl mt-2 font-semibold">Next 12 Hours</span>
+              <div id="hourly-container" class="grid grid-cols-1 w-11/12 pt-2 mb-2 pb-2 max-w-lg">
+
+            </div>
+              <div class="flex justify-around h-2"></div>
+            </div>
+          </div>
+          <div class="grid rounded-box place-items-center my-2 mx-4 mt-0 card">
+            <span class="text-xl font-semibold">Next 7 Days</span>
+            <div id="Seven-Day-Container" class="grid  grid-rows-6  w-11/12 pt-5 max-w-lg">
+            </div>
+            <div class="flex justify-around"></div>
+          </div>
+          <div class="grid rounded-box place-items-center mt-0  mx-4 card">
+            <div class="grid  grid-rows-8 grid-cols-2 w-11/12 pt-4 mr-3 max-w-lg">
+              <div class="glass bg-slate-100/15 drop-shadow-lg grid  grid-cols-3 px-4 py-2 my-2 mr-2 card">
+                <div class="flex flex-col items-start flex-wrap col-span-2">
+                  <span class="font-light text-sm">SUNRISE</span>
+                  <span id="Sunrise-Time" class="font-medium">07:02 PM</span>
+                </div>
+                <i class="wi wi-sunrise text-2xl self-center text-center text-warning"></i>
+              </div>
+              <div class="glass bg-slate-100/15 drop-shadow-lg grid  grid-cols-3 px-4 py-2  ml-2 my-2 card">
+                <div class="flex flex-col items-start col-span-2">
+                  <span class="font-light text-sm">SUNSET</span>
+                  <span id="Sunset-Time"class="font-medium">4:20 PM</span>
+                </div>
+                <i class="wi wi-sunset text-2xl self-center text-center text-warning"></i>
+              </div>
+              <div class="glass bg-slate-100/15 drop-shadow-lg grid  grid-cols-3 px-4 py-2 my-2 mr-2 card">
+                <div class="flex flex-col items-start flex-wrap col-span-2">
+                  <span class="font-light text-sm">RAIN</span>
+                  <span id="Chance-Rain-Percent" class="font-medium ">56%</span>
+                </div>
+                <i class="wi wi-raindrop text-2xl self-center text-center text-secondary"></i>
+              </div>
+              <div class="glass bg-slate-100/15 drop-shadow-lg grid  grid-cols-3 px-4 py-2  ml-2 my-2 card">
+                <div class="flex flex-col items-start col-span-2">
+                  <span class="font-light text-sm">HUMIDITY</span>
+                  <span id="Humidity-Percent" class="font-medium">69%</span>
+                </div>
+                <i class="wi wi-humidity text-2xl self-center text-center text-secondary"></i>
+              </div>
+              <div class="glass bg-slate-100/15 drop-shadow-lg grid  grid-cols-3 px-4 py-2 my-2 mr-2 card">
+                <div class="flex flex-col items-start flex-wrap col-span-2">
+                  <span class="font-light text-sm">WIND FROM</span>
+                  <span id="Wind-Direction-Speed"class="font-medium ">SE 5 MPH</span>
+                </div>
+                <i id="Wind-Direction-Icon" class="wi wi-wind text-2xl self-center text-center"></i>
+              </div>
+              <div class="glass bg-slate-100/15 drop-shadow-lg grid  grid-cols-3 px-4 py-2  ml-2 my-2 card">
+                <div class="flex flex-col items-start col-span-2">
+                  <span class="font-light text-sm">FEELS LIKE</span>
+                  <span id="feels-like-card" class="font-medium">69°</span>
+                </div>
+                <i class="wi wi-thermometer text-2xl self-center text-center"></i>
+              </div>
+              <div class="glass bg-slate-100/15 drop-shadow-lg grid  grid-cols-3 px-4 py-2 my-2 mr-2 card">
+                <div class="flex flex-col items-start flex-wrap col-span-2">
+                  <span class="font-light text-sm">PRESSURE</span>
+                  <span id="Pressure-Data" class="font-medium ">1022 hPa</span>
+                </div>
+                <i class="wi wi-barometer text-2xl self-center text-center"></i>
+              </div>
+              <div class="glass bg-slate-100/15 drop-shadow-lg grid  grid-cols-3 px-4 py-2  ml-2 my-2 card">
+                <div class="flex flex-col items-start col-span-2">
+                  <span class="font-light text-sm">UV INDEX</span>
+                  <span id="UV-Index-Data"class="font-medium">1.4</span>
+                </div>
+                <i class="wi wi-day-sunny wi-flip-vertical text-2xl self-center text-center text-warning"></i>
+              </div>
+         
+              <div class="mb-4 flex justify-around"></div>
+            </div>
+          </div>
+    </main>
+    <script src="/dist/main.js"></script>
+</body>
+</html>

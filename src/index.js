@@ -9,6 +9,7 @@ import {
   GetDailyWeather,
   willItRainNextHour,
   combineMinutes,
+  getHourlyWeatherData,
 } from './JS/apiData';
 
 import {
@@ -25,6 +26,7 @@ import {
   displayMinutePrecipitationData,
   clearDisplay,
   shouldMinuteCardDisplay,
+  displayHourlyWeather
 } from './JS/displayDOM';
 
 import { currentMessages } from './JS/messages';
@@ -45,7 +47,9 @@ let currentWeather = getCurrentConditionData(
 let nextHourRain = willItRainNextHour(await rawWeatherData);
 let sevenDayWeather = GetDailyWeather(await rawWeatherData);
 let minuteDataHalf = combineMinutes(await rawWeatherData);
+let hourWeather = getHourlyWeatherData(await rawWeatherData);
 const messages = currentMessages(currentWeather)
+console.log(hourWeather)
 
 const minutePrecipContainer = document.getElementById(
   'minute-pricip-container'
@@ -107,6 +111,7 @@ UNITS_BTN.addEventListener('click', async (e) => {
 });
 
 displayCurrentCondition(currentWeather, userLocation, messages);
+displayHourlyWeather(hourWeather)
 displaySevenDayForecast(sevenDayWeather);
 displayCardsData(currentWeather);
 displayMinutePrecipitationData(minuteDataHalf, currentWeather);
