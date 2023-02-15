@@ -12,28 +12,26 @@ function currentMessages(weatherData){
       "Rain at night is like a lullaby from Mother Nature - soothing and calming.",
       "The temperature may be chilly, but my heart is warm and fuzzy with this rainy night."
     ],
-      messages.rainDay = [
-        `Rain, rain, go away! But since you're here, I'll need my trusty umbrella.`,
-        `Oh, yay! It's raining cats and dogs. Better bring an umbrella or risk turning into a drowned rat.`,
-        `Rain, rain, don't go away! Just bring a tiny bit less of it and an umbrella for me.`,
-        `At least the rain is good for the flowers. And my umbrella.`,
-        `When it rains, it pours. Time to bust out the umbrella!`,
-        `Rain, rain, you're no fun. But I'll make the best of it with my umbrella.`,
-        `It's a wet and wild world out there. Umbrella, here I come!`,
-        `Raindrops keep falling on my head...and my shoes...and my hair...and my clothes. Umbrella, I need you!`,
-        `The forecast says rain, so I'm bringing out the big guns - my trusty umbrella.`,
-        `Rain, rain, don't go away! Just bring a tiny bit less of it and an umbrella for me.`,
-        `Raindrops keep falling on my head, but at least I don't have to water the plants.`,
-        `Rain, rain, go away! I have places to be and hair to slay.`,
-        `Who needs an umbrella when you can just let the rain wash away all your problems?`,
-        `Rainy days and Mondays always get me down... unless I have a good book and a cozy blanket.`,
-        `Rainy days are like the universe's way of saying, "Just stay inside and binge-watch something good."`,
-        `Why do people call it "raining cats and dogs"? Have they ever actually seen a cat or dog fall from the sky?`,
-        `Rain, rain, go away... unless you're bringing free lattes from Starbucks.`,
-        `Rainy days are perfect for pretending you're a superhero and saving the world from bad hair days.`,
-        `Rainy days are great for practicing your duck-and-cover skills.`,
-        `Why does everyone hate the rain? It's just nature's way of giving us a much-needed shower.`
-      ],
+      messages.rainDay = [  
+        "Rain, rain, go away! But since you're here, I'll need my umbrella.",
+        "It's raining cats and dogs. Better bring an umbrella!",  
+        "At least rain's good for flowers... and my umbrella.",
+        "When it rains, it pours. Time for my umbrella!",
+        "Rain, rain, you're no fun. But I'll make the best of it with my umbrella.",
+        "It's a wet and wild world out there. Umbrella, here I come!",
+        "Raindrops keep falling... and my clothes. Umbrella, I need you!",
+        "The forecast says rain. Time for my trusty umbrella.",
+        "Raindrops keep falling, but at least I don't have to water the plants.",
+        "Rain, rain, go away! I have hair to slay.",
+        "Who needs an umbrella? Let the rain wash away your problems.",
+        "Rainy days and Mondays get me down... unless I have a book and blanket.",
+        "Rainy days are like the universe's way of saying, 'Just stay inside.'",
+        "Why 'raining cats and dogs'? Have they seen a pet fall from the sky?",
+        "Rain, rain, go away... unless you're bringing free lattes.",
+        "Rainy days are perfect for saving the world from bad hair.", 
+        "Rainy days are great for duck-and-cover practice.",
+        "Why hate the rain? It's just nature's shower."
+    ],
     messages.clearDay = [
         `The sun is shining, clear skies ahead with UV index of ${weatherData.uvIndex}.`,
         `Clear day, time to squint with UV index of ${weatherData.uvIndex}.`,
@@ -57,15 +55,25 @@ function currentMessages(weatherData){
         `Go ahead and rub your eyes, the clear sky is real!`
       ],
       messages.clearNight = [
-        "Clear skies tonight, perfect for stargazing! Make a wish on a shooting star or a satellite, your choice.",
-        "Weather tonight: clear skies, million stars. Romantic walks or music video vibes, take your pick.",
-        "Forecast tonight: clear skies, potential for existential contemplation about the universe's vastness.",
-        "Clear night, tinfoil hat not required. No alien invasions on the horizon!",
-        "Good news, it's clear! Vampire worries can take the night off...unless you're in Mystic Falls.",
-        "Clear night, get ready to moon-gaze and mandatory howling.",
-        "It's clear, impress your friends with meteorological jargon like 'stratospheric cooling' and 'radiative cooling.'",
-        "Clear skies, accidental constellation-making with Christmas lights is a risk."
-      ],
+        "Clear skies tonight, perfect for stargazing!",
+        "Weather tonight: clear skies, million stars.",
+        "Forecast tonight: clear skies, existential contemplation.",
+        "Clear night, no alien invasions on the horizon!",
+        "Good news, it's clear! Vampire worries can take the night off.",
+        "Clear night, get ready to moon-gaze and howling.",
+        "It's clear, impress with 'stratospheric cooling' and 'radiative cooling.'",
+        "Clear skies, accidental constellation-making is a risk.",
+        "Clear night, constellation hunting season has officially begun!",
+        "Weather tonight: clear skies, so pack your telescopes and blankets.",
+        "Clear night, perfect for channeling your inner Neil Armstrong.",
+        "Forecast tonight: clear skies, zero chance of rain, 100% chance of stargazing.",
+        "Good news, it's clear! Bigfoot sightings are now more likely to be meteor showers.",
+        "Clear skies, the perfect backdrop for your imaginary UFO sightings.",
+        "Clear night, don't forget your coat - space is cold, yo.",
+        "It's clear, time to make some interstellar plans and build a space station.",
+        "Clear skies, for once, the weather won't ruin your star party.",
+        "Clear night, perfect for dreaming about aliens and their spaceships."
+        ],
     messages.thunderstorm = [
         `Bring on the thunderstorms and don't forget the umbrellas.`,
         `Thunderstorms and a need for umbrellas, perfect.`,
@@ -155,7 +163,19 @@ function currentMessages(weatherData){
         "Cloudy nights are the best for playing hide and seek with the moon (just watch out for those sneaky clouds).",
         "Tonight's forecast: clouds and a high chance of interpretive dance performances inspired by the shapes in the sky.",
         "It may be cloudy tonight, but at least you won't accidentally start a forest fire with your marshmallow roasting skills."
-      ];
+      ],
+      messages.mist = [
+        "Is it mist or am I in a cloud? Either way, it's hard to see.",
+        "It's so misty outside, I'm waiting for a pirate ship to appear.",
+        "The mist is so thick, I feel like I'm walking through a Salvador Dali painting.",
+        "Misty weather: making the world feel like a mystery novel.",
+        "It's like nature turned on the humidifier outside.",
+        "The mist is so thick, I can taste the water in the air.",
+        "Walking outside in misty weather: not recommended for those with frizzy hair.",
+        "Misty weather is nature's way of saying 'you don't need to see everything.'",
+        "This misty weather is like a natural Instagram filter, but without the need for an app.",
+        "I'm not saying it's misty outside, but I'm pretty sure I just saw Bigfoot."
+      ]
 
     return messages
 }
@@ -179,6 +199,8 @@ function returnMessage(weatherData , message){
         return message.drizzle[Math.floor(Math.random() * message.drizzle.length)]
     } if(weatherData.main === "Thunderstorm"){
         return message.thunderstorm[Math.floor(Math.random() * message.thunderstorm.length)]
+    } if (weatherData.main === "Mist"){
+      return message.mist[Math.floor(Math.random() * message.mist.length)]
     }
 }
 
