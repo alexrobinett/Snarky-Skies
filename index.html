@@ -37,8 +37,8 @@
             </div>
           </div>
           <div class="flex flex-col w-full">
-            <div class=" mx-8 my-4 card  flex justify-center glass drop-shadow">
-                <div class="grid grid-cols-5 grid-rows-3 max-w-lg place-self-center">
+            <div class=" mx-8 my-4 card  flex justify-center glass drop-shadow max-w-2xl self-center">
+                <div class="grid grid-cols-5 grid-rows-3 max-w-lg place-self-center ">
                   <span id="city-name" class="text-3xl text-center col-start-1 col-end-6 py-4 self-center">Atlanta</span>
                   <div class="col-start-2 col-end-5 flex justify-evenly">
                     <div class="flex flex-col justify-evenly">
@@ -55,16 +55,27 @@
                 </div>
               </div>
           </div>
-          <div class="grid rounded-box place-items-center my-2 mx-4 mt-0 card bg-slate-200">
-            <span>hourly</span>
-            <div id="hourly-container" class="grid  grid-rows-6  w-11/12 pt-5 max-w-lg">
-            <div class="bg-slate-100/15 drop-shadow-lg grid grid-cols-3 px-4 py-2 my-2 card"><span class="self-center text-xl">6PM</span><div class="flex flex-col justify-evenly items-center mt-1"><i class="wi wi-owm-500 text-2xl self-center text-center"></i><span class="font-light text-sm pt-1">Rain</span></div><div class="flex flex-col items-end"><span class="font-light">H:66°</span><span class="font-light">L:55°</span></div></div>
-            <div class="glass bg-slate-100/15 drop-shadow-lg grid grid-cols-3 px-4 py-2 my-2 card"><span class="self-center text-xl">7PM</span><div class="flex flex-col justify-evenly items-center mt-1"><i class="wi wi-owm-502 text-2xl self-center text-center"></i><span class="font-light text-sm pt-1">Rain</span></div><div class="flex flex-col items-end"><span class="font-light">H:69°</span><span class="font-light">L:54°</span></div></div>
-            <div class="glass bg-slate-100/15 drop-shadow-lg grid grid-cols-3 px-4 py-2 my-2 card"><span class="self-center text-xl">8PM</span><div class="flex flex-col justify-evenly items-center mt-1"><i class="wi wi-owm-502 text-2xl self-center text-center"></i><span class="font-light text-sm pt-1">Rain</span></div><div class="flex flex-col items-end"><span class="font-light">H:56°</span><span class="font-light">L:37°</span></div>
-            </div><div class="glass bg-slate-100/15 drop-shadow-lg grid grid-cols-3 px-4 py-2 my-2 card"><span class="self-center text-xl">9PM</span><div class="flex flex-col justify-evenly items-center mt-1"><i class="wi wi-owm-804 text-2xl self-center text-center"></i><span class="font-light text-sm pt-1">Clouds</span></div><div class="flex flex-col items-end"><span class="font-light">H:52°</span><span class="font-light">L:33°</span></div></div>
-            <div class="glass bg-slate-100/15 drop-shadow-lg grid grid-cols-3 px-4 py-2 my-2 card"><span class="self-center text-xl">Sunday</span><div class="flex flex-col justify-evenly items-center mt-1"><i class="wi wi-owm-801 text-2xl self-center text-center"></i><span class="font-light text-sm pt-1">Clouds</span></div><div class="flex flex-col items-end"><span class="font-light">H:62°</span><span class="font-light">L:40°</span></div></div><div class="glass bg-slate-100/15 drop-shadow-lg grid grid-cols-3 px-4 py-2 my-2 card"><span class="self-center text-xl">Monday</span><div class="flex flex-col justify-evenly items-center mt-1"><i class="wi wi-owm-500 text-2xl self-center text-center"></i><span class="font-light text-sm pt-1">Rain</span></div><div class="flex flex-col items-end"><span class="font-light">H:67°</span><span class="font-light">L:46°</span></div></div><div class="glass bg-slate-100/15 drop-shadow-lg grid grid-cols-3 px-4 py-2 my-2 card"><span class="self-center text-xl">Tuesday</span><div class="flex flex-col justify-evenly items-center mt-1"><i class="wi wi-owm-501 text-2xl self-center text-center"></i><span class="font-light text-sm pt-1">Rain</span></div><div class="flex flex-col items-end"><span class="font-light">H:67°</span><span class="font-light">L:55°</span></div></div></div>
-            <div class="flex justify-around"></div>
+          <div>
+            <div class="grid rounded-box place-items-center my-2 mx-4 mt-0 card self-center">
+              <span class="text-xl mt-2 font-semibold">Hourly</span>
+              <div id="hourly-container" class="grid grid-cols-1 w-11/12 pt-2 mb-2 pb-2 max-w-lg">
+                <div class=" glass bg-slate-100/15 drop-shadow-lg grid grid-cols-4 px-4 py-2 my-2 card"><span class="self-center text-md">9PM</span><i class="wi wi-owm-500 text-xl self-center text-center"></i><div class="flex flex-col items-center justify-center"><span class="font-light">67°</span></div> <div class="flex items-center justify-end"><i class="wi wi-raindrops text-2xl self-center text-center px-2"></i> <span class="text-right">78%</span></div></div>
+                <div class=" glass bg-slate-100/15 drop-shadow-lg grid grid-cols-4 px-4 py-2 my-2 card"><span class="self-center text-md">10PM</span><i class="wi wi-owm-500 text-xl self-center text-center"></i><div class="flex flex-col items-center justify-center"><span class="font-light">67°</span></div> <div class="flex items-center justify-end"><i class="wi wi-raindrops text-2xl self-center text-center px-2"></i> <span class="text-right">78%</span></div></div>
+                <div class=" glass bg-slate-100/15 drop-shadow-lg grid grid-cols-4 px-4 py-2 my-2 card"><span class="self-center text-md">11PM</span><i class="wi wi-owm-500 text-xl self-center text-center"></i><div class="flex flex-col items-center justify-center"><span class="font-light">67°</span></div> <div class="flex items-center justify-end"><i class="wi wi-raindrops text-2xl self-center text-center px-2"></i> <span class="text-right">78%</span></div></div>
+                <div class=" glass bg-slate-100/15 drop-shadow-lg grid grid-cols-4 px-4 py-2 my-2 card"><span class="self-center text-md">12AM</span><i class="wi wi-owm-500 text-xl self-center text-center"></i><div class="flex flex-col items-center justify-center"><span class="font-light">67°</span></div> <div class="flex items-center justify-end"><i class="wi wi-raindrops text-2xl self-center text-center px-2"></i> <span class="text-right">78%</span></div></div>
+                <div class=" glass bg-slate-100/15 drop-shadow-lg grid grid-cols-4 px-4 py-2 my-2 card"><span class="self-center text-md">1AM</span><i class="wi wi-owm-500 text-xl self-center text-center"></i><div class="flex flex-col items-center justify-center"><span class="font-light">67°</span></div> <div class="flex items-center justify-end"><i class="wi wi-raindrops text-2xl self-center text-center px-2"></i> <span class="text-right">78%</span></div></div>
+                <div class=" glass bg-slate-100/15 drop-shadow-lg grid grid-cols-4 px-4 py-2 my-2 card"><span class="self-center text-md">2AM</span><i class="wi wi-owm-500 text-xl self-center text-center"></i><div class="flex flex-col items-center justify-center"><span class="font-light">67°</span></div> <div class="flex items-center justify-end"><i class="wi wi-raindrops text-2xl self-center text-center px-2"></i> <span class="text-right">78%</span></div></div>
+                <div class=" glass bg-slate-100/15 drop-shadow-lg grid grid-cols-4 px-4 py-2 my-2 card"><span class="self-center text-md">3AM</span><i class="wi wi-owm-500 text-xl self-center text-center"></i><div class="flex flex-col items-center justify-center"><span class="font-light">67°</span></div> <div class="flex items-center justify-end"><i class="wi wi-raindrops text-2xl self-center text-center px-2"></i> <span class="text-right">78%</span></div></div>
+                <div class=" glass bg-slate-100/15 drop-shadow-lg grid grid-cols-4 px-4 py-2 my-2 card"><span class="self-center text-md">4AM</span><i class="wi wi-owm-500 text-xl self-center text-center"></i><div class="flex flex-col items-center justify-center"><span class="font-light">67°</span></div> <div class="flex items-center justify-end"><i class="wi wi-raindrops text-2xl self-center text-center px-2"></i> <span class="text-right">78%</span></div></div>
+                <div class=" glass bg-slate-100/15 drop-shadow-lg grid grid-cols-4 px-4 py-2 my-2 card"><span class="self-center text-md">5AM</span><i class="wi wi-owm-500 text-xl self-center text-center"></i><div class="flex flex-col items-center justify-center"><span class="font-light">67°</span></div> <div class="flex items-center justify-end"><i class="wi wi-raindrops text-2xl self-center text-center px-2"></i> <span class="text-right">78%</span></div></div>
+                <div class=" glass bg-slate-100/15 drop-shadow-lg grid grid-cols-4 px-4 py-2 my-2 card"><span class="self-center text-md">6AM</span><i class="wi wi-owm-500 text-xl self-center text-center"></i><div class="flex flex-col items-center justify-center"><span class="font-light">67°</span></div> <div class="flex items-center justify-end"><i class="wi wi-raindrops text-2xl self-center text-center px-2"></i> <span class="text-right">78%</span></div></div>
+                <div class=" glass bg-slate-100/15 drop-shadow-lg grid grid-cols-4 px-4 py-2 my-2 card"><span class="self-center text-md">7AM</span><i class="wi wi-owm-500 text-xl self-center text-center"></i><div class="flex flex-col items-center justify-center"><span class="font-light">67°</span></div> <div class="flex items-center justify-end"><i class="wi wi-raindrops text-2xl self-center text-center px-2"></i> <span class="text-right">78%</span></div></div>
+                <div class=" glass bg-slate-100/15 drop-shadow-lg grid grid-cols-4 px-4 py-2 my-2 card"><span class="self-center text-md">8AM</span><i class="wi wi-owm-500 text-xl self-center text-center"></i><div class="flex flex-col items-center justify-center"><span class="font-light">H:67°</span></div> <div class="flex items-center justify-end"><i class="wi wi-raindrops text-2xl self-center text-center px-2"></i> <span class="text-right">78%</span></div></div>
+            </div>
+              <div class="flex justify-around h-2"></div>
+            </div>
           </div>
+          
           <div id="Precip-Card" class="drop-shadow-xl glass bg-slate-100/15 card m-2 mx-8 flex flex-col ">
             <div class="flex flex-col justify-center px-4" >
               <span id="next-hour-message" class="text-center text-xl">Next Hour: Light Rain</span>
@@ -82,12 +93,13 @@
             </div>
           </div>
           <div class="grid rounded-box place-items-center my-2 mx-4 mt-0 card">
+            <span class="text-xl font-semibold">Next 7 Days</span>
             <div id="Seven-Day-Container" class="grid  grid-rows-6  w-11/12 pt-5 max-w-lg">
             </div>
             <div class="flex justify-around"></div>
           </div>
           <div class="grid rounded-box place-items-center mt-0  mx-4 card">
-            <div class="grid  grid-rows-8 grid-cols-2 w-11/12 pt-4 mr-3max-w-lg">
+            <div class="grid  grid-rows-8 grid-cols-2 w-11/12 pt-4 mr-3 max-w-lg">
               <div class="glass bg-slate-100/15 drop-shadow-lg grid  grid-cols-3 px-4 py-2 my-2 mr-2 card">
                 <div class="flex flex-col items-start flex-wrap col-span-2">
                   <span class="font-light text-sm">SUNRISE</span>
