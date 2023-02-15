@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components {
+    .loader {
+        @apply bg-[#0145A3] w-full h-screen fixed top-0 left-0 ease-in-out transform transition-opacity opacity-100 duration-500;
+   
+        &.is-hidden {
+           @apply opacity-0 delay-500;
+
+            .loader__panel{
+                @apply opacity-0  delay-500;
+            }
+
+        }
+    }
+    
+
+}

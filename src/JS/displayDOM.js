@@ -220,6 +220,20 @@ function shouldMinuteCardDisplay(isRain) {
   }
 }
 
+function displayLoading(){
+  const weatherContainer = document.getElementById("weather-container")
+  const loader = document.querySelector(".loader");
+  weatherContainer.classList.add("animate-pulse")
+
+  loader.classList.add("is-hidden")
+  setTimeout(() => {
+      weatherContainer.classList.remove("animate-pulse")
+      loader.classList.add("hidden")
+  }, 700);
+
+}
+
+
 export {
   displayCurrentCondition,
   displaySevenDayForecast,
@@ -227,5 +241,6 @@ export {
   displayMinutePrecipitationData,
   clearDisplay,
   shouldMinuteCardDisplay,
-  displayHourlyWeather
-};
+  displayHourlyWeather,
+  displayLoading,
+}

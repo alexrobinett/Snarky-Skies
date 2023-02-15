@@ -8,7 +8,7 @@
 </head>
 <body>
     <main>
-        <div class="navbar bg-primary text-primary-content sticky top-0 z-10 grid grid-cols-3 grid-rows-1">
+        <div class="navbar bg-primary text-primary-content sticky top-0 z-30 grid grid-cols-3 grid-rows-1">
           <div class="col-span-1 justify-center">
               <a class="p-2 pnormal-case text-3xl font-semibold text-center justify-center text-neutral">Snarky Skies</a>
           </div>
@@ -36,7 +36,11 @@
               </div>
             </div>
           </div>
-          <div class="flex flex-col w-full">
+          <div class="loader z-20">
+            <div class="loader__panel flex justify-center items-center">
+            </div>
+          </div>
+          <div id="weather-container" class="flex flex-col w-full">
             <div class=" mx-8 my-4 card  flex justify-center glass drop-shadow max-w-3xl self-center">
                 <div id="current-conditions-container" class="grid grid-cols-5 grid-rows-3 max-w-lg place-self-center ">
                 
