@@ -57,7 +57,7 @@ function currentMessages(weatherData){
       messages.clearNight = [
         "Clear skies tonight, perfect for stargazing!",
         "Weather tonight: clear skies, million stars.",
-        "Forecast tonight: clear skies, existential contemplation.",
+        "Forecast tonight: clear skies, existential contempeturelation.",
         "Clear night, no alien invasions on the horizon!",
         "Good news, it's clear! Vampire worries can take the night off.",
         "Clear night, get ready to moon-gaze and howling.",
@@ -98,13 +98,13 @@ function currentMessages(weatherData){
       ],
     messages.drizzle =[
         `Just what I wanted: a day of drizzle.`,
-        `Drizzle and a ${weatherData.temp} temp, lovely.`,
+        `Drizzle and a ${weatherData.temp} temperature, lovely.`,
         `Today's forecast: drizzle.`,
-        `Drizzle and a ${weatherData.temp} temp, just peachy.`,
+        `Drizzle and a ${weatherData.temp} temperature, just peachy.`,
         `The drizzle just adds to the charm of this weather.`,
-        `A day of drizzle and a ${weatherData.temp} temp, delightful.`,
+        `A day of drizzle and a ${weatherData.temp} temperature, delightful.`,
         `Drizzle, what more could I ask for?`,
-        `Today's highlight: drizzle and a ${weatherData.temp} temp.`,
+        `Today's highlight: drizzle and a ${weatherData.temp} temperature.`,
         `Drizzle, woo-hoo.`,
         `Drizzle, yay!`,
         `Why bother with a shower when you have the drizzle to get you soaked?`,
@@ -141,16 +141,16 @@ function currentMessages(weatherData){
         `Snow is like a winter dream... that you never want to end. And it's a nippy ${weatherData.temp} outside.`
       ],
     messages.cloudsDay = [
-        `This gray sky and ${weatherData.temp} temp? Joyful.`,
+        `This gray sky and ${weatherData.temp} temperature? Joyful.`,
         `Perfect weather for staying in: clouds and ${weatherData.temp} temp.`,
-        `Another day under clouds, yay. Temp is ${weatherData.temp}.`,
+        `Another day under clouds, yay. Temperature is ${weatherData.temp}.`,
         `Clouds ruining the sun. At least it's ${weatherData.temp}.`,
-        `Clouds blocking the sun and temp is ${weatherData.temp}.`,
+        `Clouds blocking the sun and temperature is ${weatherData.temp}.`,
         `Gray sky, no sun. It's ${weatherData.temp}.`,
-        `Clouds giggling, temp is ${weatherData.temp}.`,
-        `Clouds having a field day, temp is ${weatherData.temp}.`,
-        `Another day, another cloud. Temp is ${weatherData.temp}.`,
-        `Clouds feeling sluggish, temp is ${weatherData.temp}.`
+        `Clouds giggling, temperature is ${weatherData.temp}.`,
+        `Clouds having a field day, Temperature is ${weatherData.temp}.`,
+        `Another day, another cloud. Temperature is ${weatherData.temp}.`,
+        `Clouds feeling sluggish, Temperature is ${weatherData.temp}.`
       ],
       messages.cloudsNight = [
         "Cloudy night ahead, perfect for some moody introspection or Netflix binging.",
@@ -175,6 +175,18 @@ function currentMessages(weatherData){
         "Misty weather is nature's way of saying 'you don't need to see everything.'",
         "This misty weather is like a natural Instagram filter, but without the need for an app.",
         "I'm not saying it's misty outside, but I'm pretty sure I just saw Bigfoot."
+      ],
+      messages.fog = [  
+        "Peek-a-boo! I can't see you through this fog.",  
+        "Thick as pea soup and twice as delicious... wait, no, that's not right. It's just foggy.",  
+        "I could make a joke about fog, but it's a bit hazy...",  
+        "Fog: when the world decides to go incognito mode.",  
+        "Well, the good news is you won't be blinded by any shiny objects in this fog.",  
+        "Fog is just Mother Nature's way of telling us to slow down and appreciate the journey.",  
+        "In this fog, even the trees are playing hide and seek.",  
+        "Foggy nights: the perfect cover for amateur ninja missions.",  
+        "Foggy weather is like a magic show - now you see the building, now you don't!",  
+        "The fog is rolling in...time to cue the creepy music and start telling ghost stories."
       ]
 
     return messages
@@ -201,7 +213,11 @@ function returnMessage(weatherData , message){
         return message.thunderstorm[Math.floor(Math.random() * message.thunderstorm.length)]
     } if (weatherData.main === "Mist"){
       return message.mist[Math.floor(Math.random() * message.mist.length)]
-    }
+    } if (weatherData.main === "Fog"){
+      return message.fog[Math.floor(Math.random() * message.fog.length)]
+    } if (weatherData.main === "Tornado"){
+      return "OH SH*T! There is a possibility of tornado outside seek shelter immediately!"
+    }else return "the Weather must be BAAADDD because it's not on my list of messages!"
 }
 
 

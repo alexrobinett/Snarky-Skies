@@ -34,8 +34,6 @@ import { currentMessages } from './JS/messages';
 const WEATHER_SEARCH_BUTTON = document.querySelector('#search-btn');
 const UNITS_BTN = document.querySelector('#units-btn');
 
-// navigator.geolocation.getCurrentPosition(successUserPos);
-
 
 let measurementUnits = 'imperial';
 let userLocation = await getUserLocation();
@@ -46,18 +44,18 @@ let currentWeather = getCurrentConditionData(
 );
 let nextHourRain = willItRainNextHour(await rawWeatherData);
 let sevenDayWeather = GetDailyWeather(await rawWeatherData);
-let minuteDataHalf = combineMinutes(await rawWeatherData);
+let minuteData = combineMinutes(await rawWeatherData);
 let hourWeather = getHourlyWeatherData(await rawWeatherData);
-const messages = currentMessages(currentWeather)
-console.log(hourWeather)
+let messages = currentMessages(currentWeather)
 
 const minutePrecipContainer = document.getElementById(
   'minute-pricip-container'
 );
-const forecastContainer = document.getElementById('Seven-Day-Container');
 
-console.log(currentWeather)
-console.log(rawWeatherData)
+const forecastContainerDays = document.getElementById('Seven-Day-Container');
+const forecastContainerHours = document.getElementById('hourly-container');
+const currentConditionContainer = document.getElementById("current-conditions-container")
+
 async function updateWeather() {
   const weatherData = await getWeather(
     userLocation.lat,
@@ -75,16 +73,28 @@ WEATHER_SEARCH_BUTTON.addEventListener('click', async (e) => {
     await rawWeatherData,
     measurementUnits
   );
+  nextHourRain = willItRainNextHour(await rawWeatherData);
   sevenDayWeather = GetDailyWeather(await rawWeatherData);
-  minuteDataHalf = combineMinutes(await rawWeatherData);
+  hourWeather = getHourlyWeatherData(await rawWeatherData);
+  minuteData = combineMinutes(await rawWeatherData);
+  messages = currentMessages(currentWeather)
+  
   
 
   clearDisplay(minutePrecipContainer);
-  clearDisplay(forecastContainer);
+  clearDisplay(forecastContainerDays);
+  clearDisplay(forecastContainerHours)
+  clearDisplay(currentConditionContainer)
+
   displayCurrentCondition(currentWeather, userLocation, messages);
   displaySevenDayForecast(sevenDayWeather);
+  displayHourlyWeather(hourWeather)
   displayCardsData(currentWeather);
-  displayMinutePrecipitationData(minuteDataHalf);
+  displayMinutePrecipitationData(minuteData, currentWeather);
+  console.log(nextHourRain)
+  console.log(currentWeather)
+  console.log(rawWeatherData)
+  console.log(willItRainNextHour(await rawWeatherData))
   shouldMinuteCardDisplay(nextHourRain);
 });
 
@@ -97,16 +107,21 @@ UNITS_BTN.addEventListener('click', async (e) => {
     await rawWeatherData,
     measurementUnits
   );
+  nextHourRain = willItRainNextHour(await rawWeatherData);
   sevenDayWeather = GetDailyWeather(await rawWeatherData);
-  minuteDataHalf = combineMinutes(await rawWeatherData);
+  hourWeather = getHourlyWeatherData(await rawWeatherData);
+  minuteData = combineMinutes(await rawWeatherData);
+  messages = currentMessages(currentWeather)
 
   clearDisplay(minutePrecipContainer);
-  clearDisplay(forecastContainer);
-  shouldMinuteCardDisplay(nextHourRain);
+  clearDisplay(forecastContainerDays);
+  clearDisplay(forecastContainerHours)
+
   displayCurrentCondition(currentWeather, userLocation, messages);
   displaySevenDayForecast(sevenDayWeather);
+  displayHourlyWeather(hourWeather)
   displayCardsData(currentWeather);
-  displayMinutePrecipitationData(minuteDataHalf, currentWeather);
+  displayMinutePrecipitationData(minuteData, currentWeather);
   shouldMinuteCardDisplay(nextHourRain);
 });
 
@@ -114,7 +129,7 @@ displayCurrentCondition(currentWeather, userLocation, messages);
 displayHourlyWeather(hourWeather)
 displaySevenDayForecast(sevenDayWeather);
 displayCardsData(currentWeather);
-displayMinutePrecipitationData(minuteDataHalf, currentWeather);
+displayMinutePrecipitationData(minuteData, currentWeather);
 shouldMinuteCardDisplay(nextHourRain);
 
 

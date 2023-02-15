@@ -55,7 +55,7 @@ function getCurrentConditionData(weather, units) {
   currentConditionData.pressure = `${weather.current.pressure} hPa`;
   currentConditionData.humidity = `${weather.current.humidity}%`;
   currentConditionData.uvIndex = weather.current.uvi;
-  currentConditionData.chanceOfRain = `${weather.daily[0].pop * 100}%`;
+  currentConditionData.chanceOfRain = `${(weather.daily[0].pop * 100).toFixed(0)}%`;
   currentConditionData.time = new Date(
     weather.current.dt * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   currentConditionData.sunrise = new Date(
@@ -168,7 +168,7 @@ function getHourlyWeatherData(weather){
       weather.hourly[i].dt * 1000).toLocaleTimeString([], { hour: '2-digit' });
     hour.id = weather.hourly[i].weather[0].id
     hour.temp =  `${Math.trunc(weather.hourly[i].temp)}°`;
-    hour.chanceOfRain =  weather.hourly[i].pop * 100;
+    hour.chanceOfRain =  (weather.hourly[i].pop * 100).toFixed(0);
 
     if (hour.time[0] === "0"){
       hour.time = hour.time.replace("0","")
@@ -214,7 +214,7 @@ function GetDailyWeather(weather) {
     dailyWeather.id = weather.daily[i].weather[0].id;
     dailyWeather.icon = weather.daily[i].weather[0].icon;
     dailyWeather.main = weather.daily[i].weather[0].main;
-    dailyWeather.chanceOfRain = `${weather.daily[i].pop * 100}%`;
+    dailyWeather.chanceOfRain = `${(weather.daily[i].pop * 100).toFixed(0)}%`;
     dailyWeather.lowTemp = `${Math.trunc(weather.daily[i].temp.min)}°`;
     dailyWeather.highTemp = `${Math.trunc(weather.daily[i].temp.max)}°`;
 

@@ -3,30 +3,76 @@
 import { currentMessages, returnMessage } from "./messages";
 
 function displayCurrentCondition(weatherData, location, messages) {
-  // // Dom Cache
-  const currentCityName = document.getElementById('city-name');
-  const currentWeatherIcon = document.getElementById('current-weather-icon');
-  const currentTemp = document.getElementById('current-temp');
-  const feelsTemp = document.getElementById('feels-temp');
-  const currentWeatherDescription = document.getElementById(
-    'current-description'
-  );
-  const currentMessage = document.getElementById('current-message');
+const currentConditionsContainer = document.getElementById("current-conditions-container")
 
-  console.log(weatherData);
-  currentCityName.innerText = location.city;
-  currentTemp.innerText = weatherData.temp;
-  feelsTemp.innerText = `feels ${weatherData.feel}`;
-  currentWeatherDescription.innerText = weatherData.main;
-  currentMessage.innerText = returnMessage(weatherData, messages);
-  if(weatherData.isDayLight === true && weatherData.main === "Clear" ){
-    currentWeatherIcon.classList.add(`wi-owm-day-${weatherData.id}`,"text-warning");
-  }else  if(weatherData.isDayLight === true){
-    currentWeatherIcon.classList.add(`wi-owm-day-${weatherData.id}`,"text-secondary");
-  }else if (weatherData.isDayLight === false){
-    currentWeatherIcon.classList.add(`wi-owm-night-${weatherData.id}`,"text-secondary");
-  }
+// create the city name span element
+const currentCityName = document.createElement('span');
+currentCityName.id = 'city-name';
+currentCityName.className = 'text-3xl text-center col-start-1 col-end-6 py-4 self-center';
+currentCityName.textContent = location.city;
+
+// create the first child div element
+const firstChildDiv = document.createElement('div');
+firstChildDiv.className = 'col-start-2 col-end-5 flex justify-evenly';
+
+// create the icon div element
+const iconDiv = document.createElement('div');
+iconDiv.className = 'flex flex-col justify-evenly';
+const currentWeatherIcon  = document.createElement('i');
+currentWeatherIcon.id = 'current-weather-icon';
+currentWeatherIcon.className = 'wi text-5xl';
+if(weatherData.isDayLight === true && weatherData.main === "Clear" ){
+  currentWeatherIcon.classList.add(`wi-owm-day-${weatherData.id}`,"text-warning");
+}else  if(weatherData.isDayLight === true){
+  currentWeatherIcon.classList.add(`wi-owm-day-${weatherData.id}`,"text-secondary");
+}else if (weatherData.isDayLight === false){
+  currentWeatherIcon.classList.add(`wi-owm-night-${weatherData.id}`,"text-secondary");
+
+}else currentWeatherIcon.classList.add(`wi-owm-night-${weatherData.id}`,"text-secondary");
+iconDiv.appendChild(currentWeatherIcon);
+
+
+const currentWeatherDescription = document.createElement('span');
+currentWeatherDescription.id = 'current-description';
+currentWeatherDescription.className = 'text-center pt-1';
+currentWeatherDescription.innerText = weatherData.main;
+iconDiv.appendChild(currentWeatherDescription);
+
+// create the temperature div element
+const temperatureDiv = document.createElement('div');
+temperatureDiv.className = 'flex flex-col justify-evenly';
+const currentTemp = document.createElement('span');
+currentTemp.id = 'current-temp';
+currentTemp.className = 'text-5xl';
+currentTemp.innerText = weatherData.temp;
+
+const feelsTemp = document.createElement('span');
+feelsTemp.id = 'feels-temp';
+feelsTemp.className = 'pt-1.5';
+feelsTemp.innerText = `feels ${weatherData.feel}`
+temperatureDiv.appendChild(currentTemp);
+temperatureDiv.appendChild(feelsTemp);
+
+// add the icon and temperature divs to the first child div
+firstChildDiv.appendChild(iconDiv);
+firstChildDiv.appendChild(temperatureDiv);
+
+// create the second child div element
+const secondChildDiv = document.createElement('div');
+secondChildDiv.className = 'col-start-2 col-end-5 flex py-5';
+const currentMessage = document.createElement('p');
+currentMessage.id = 'current-message';
+currentMessage.className = 'text-center';
+currentMessage.innerText = returnMessage(weatherData, messages);
+secondChildDiv.appendChild(currentMessage);
+
+// add the child elements to the parent element
+currentConditionsContainer.appendChild(currentCityName);
+currentConditionsContainer.appendChild(firstChildDiv);
+currentConditionsContainer.appendChild(secondChildDiv);
+
 }
+
 
 function displaySevenDayForecast(weatherData) {
   const forecastContainer = document.getElementById('Seven-Day-Container');
