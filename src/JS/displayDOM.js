@@ -1,7 +1,7 @@
 /* eslint-disable no-plusplus */
 
 
-import "../images/github-mark.png"
+import githubIcon from "../images/github-mark.png"
 import { currentMessages, returnMessage } from "./messages";
 
 function displayCurrentCondition(weatherData, location, messages) {
@@ -235,6 +235,28 @@ function displayLoading(){
 
 }
 
+function displayWatermark(){
+  const waterMarkCTN = document.getElementById("alex-ctn")
+
+  const text = document.createElement("span");
+  text.innerText = "Made by Alex Robinett";
+  text.classList.add("self-center");
+
+  const link = document.createElement("a");
+  link.href = "https://github.com/alexrobinett/Simple-Weather";
+  link.classList.add("self-center");
+
+  const image = document.createElement("img");
+  image.src = githubIcon;
+  image.alt = "";
+  image.classList.add("w-4", "self-center", "ml-2");
+
+  link.appendChild(image);
+  waterMarkCTN.appendChild(text);
+  waterMarkCTN.appendChild(link);
+
+}
+
 
 export {
   displayCurrentCondition,
@@ -245,4 +267,5 @@ export {
   shouldMinuteCardDisplay,
   displayHourlyWeather,
   displayLoading,
+  displayWatermark,
 }

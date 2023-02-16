@@ -24,7 +24,8 @@ import {
   clearDisplay,
   shouldMinuteCardDisplay,
   displayHourlyWeather,
-  displayLoading
+  displayLoading,
+  displayWatermark
 } from './JS/displayDOM';
 
 import { currentMessages } from './JS/messages';
@@ -67,6 +68,7 @@ async function updateWeatherDisplay (){
   displaySevenDayForecast(sevenDayWeather);
   displayCardsData(currentWeather);
   displayMinutePrecipitationData(minuteData, currentWeather);
+  displayWatermark();
   shouldMinuteCardDisplay(nextHourRain);
 }
 
