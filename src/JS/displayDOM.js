@@ -162,7 +162,7 @@ function displayMinutePrecipitationData(weatherData,currentWeather) {
     );
 
     progressElement.setAttribute('value', `${weatherData[i]}`);
-    progressElement.setAttribute('max', '7.5');
+    progressElement.setAttribute('max', '18');
 
     minutePrecipContainer.appendChild(progressElement);
   }
