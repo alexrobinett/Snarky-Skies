@@ -160,11 +160,11 @@ function displayMinutePrecipitationData(weatherData,currentWeather) {
 
     progressElement.setAttribute(
       'class',
-      'bg-transparent progress progress-info w-36 -rotate-90 -translate-x-[4.40rem]'
+      ' progress progress-info w-36 -rotate-90 -translate-x-[4.40rem]'
     );
 
     progressElement.setAttribute('value', `${weatherData[i]}`);
-    progressElement.setAttribute('max', `${Math.max(...weatherData) > 7.5 ? Math.max(...weatherData) : 7.5}`);
+    progressElement.setAttribute('max', `${Math.max(...weatherData) > 7.5 ? Math.max(...weatherData) + 2 : 7.5}`);
 
     minutePrecipContainer.appendChild(progressElement);
   }

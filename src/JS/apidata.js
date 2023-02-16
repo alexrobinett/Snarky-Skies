@@ -190,13 +190,35 @@ function willItRainNextHour(weather) {
   return precipPercentage / 61 > 0;
 }
 
+function smoothRainData(rainData, windowSize) {
+  const smoothedData = [];
+  
+  for (let i = 0; i < rainData.length; i++) {
+    let sum = 0;
+    let count = 0;
+    
+    for (let j = i - Math.floor(windowSize / 2); j <= i + Math.floor(windowSize / 2); j++) {
+      if (j >= 0 && j < rainData.length) {
+        sum += rainData[j];
+        count++;
+      }
+    }
+    
+    smoothedData.push(sum / count);
+  }
+  
+  return smoothedData;
+}
+
+
+
+
 function combineMinutes(weather) {
   const nextHourData = weather.minutely;
   let Minutes = [];
   for (let i = 0; i < nextHourData.length - 1; i++) {
       Minutes.push( nextHourData[i].precipitation);
     }
-    console.log(Minutes)
   return Minutes;
 }
 
@@ -233,5 +255,6 @@ export {
   getGeoInfo,
   combineMinutes,
   GOOGLE_KEYS,
-  getHourlyWeatherData
+  getHourlyWeatherData,
+  smoothRainData,
 };

@@ -9,6 +9,7 @@ import {
   willItRainNextHour,
   combineMinutes,
   getHourlyWeatherData,
+  smoothRainData,
 } from './JS/apiData';
 
 import {
@@ -49,7 +50,10 @@ async function updateWeatherDisplay (){
   let currentWeather = getCurrentConditionData( await rawWeatherData,measurementUnits);
   let nextHourRain = willItRainNextHour(await rawWeatherData);
   let sevenDayWeather = GetDailyWeather(await rawWeatherData);
-  let minuteData = combineMinutes(await rawWeatherData);
+  let rainData = combineMinutes(await rawWeatherData);
+  let minuteData = smoothRainData(rainData, 10)
+  console.log(rainData)
+  console.log(minuteData)
   let hourWeather = getHourlyWeatherData(await rawWeatherData);
   let messages = currentMessages(currentWeather)
 
