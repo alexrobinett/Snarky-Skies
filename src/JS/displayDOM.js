@@ -153,7 +153,7 @@ function displayMinutePrecipitationData(weatherData,weatherMinutes,currentCondit
   );
 
   const maxValue = 
-  nextHourMessage.innerText = weatherMinutes > 0 ? `Rain Starting in ${weatherMinutes} minutes.` : `Currently: ${currentCondition.description}`;
+  nextHourMessage.innerText = weatherMinutes > 0 ? `Rain Starting in ${weatherMinutes} minutes` : `Currently: ${currentCondition.description}`;
 
   for (let i = 0; i < weatherData.length; i++) {
     const progressElement = document.createElement('progress');

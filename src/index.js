@@ -52,7 +52,7 @@ async function updateWeatherDisplay (){
   let nextHourRain = willItRainNextHour(await rawWeatherData);
   let sevenDayWeather = GetDailyWeather(await rawWeatherData);
   let rainData = combineMinutes(await rawWeatherData);
-  let minuteData = smoothRainData(rainData, 12)
+  let minuteData = smoothRainData(rainData, 15)
   console.log(rainData)
   console.log(minuteData)
   let hourWeather = getHourlyWeatherData(await rawWeatherData);
@@ -72,7 +72,7 @@ async function updateWeatherDisplay (){
   displayHourlyWeather(hourWeather)
   displaySevenDayForecast(sevenDayWeather);
   displayCardsData(currentWeather);
-  displayMinutePrecipitationData(minuteData, minutesUntilRaining(minuteData, 1),currentWeather);
+  displayMinutePrecipitationData(minuteData, minutesUntilRaining(minuteData, 0.3),currentWeather);
   shouldMinuteCardDisplay(nextHourRain);
 }
 
