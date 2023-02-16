@@ -68,7 +68,6 @@ async function updateWeatherDisplay (){
   displaySevenDayForecast(sevenDayWeather);
   displayCardsData(currentWeather);
   displayMinutePrecipitationData(minuteData, currentWeather);
-  displayWatermark();
   shouldMinuteCardDisplay(nextHourRain);
 }
 
@@ -94,5 +93,6 @@ UNITS_BTN.addEventListener('click', async (e) => {
 
 updateWeatherDisplay()
 displayLoading()
+displayWatermark();
 
 export {};
