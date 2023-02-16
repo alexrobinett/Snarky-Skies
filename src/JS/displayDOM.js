@@ -146,14 +146,14 @@ function displayCardsData(weatherData) {
   );
 }
 
-function displayMinutePrecipitationData(weatherData,currentWeather) {
+function displayMinutePrecipitationData(weatherData,weatherMinutes,currentCondition) {
   const nextHourMessage = document.getElementById("next-hour-message");
   const minutePrecipContainer = document.getElementById(
     'minute-pricip-container'
   );
 
   const maxValue = 
-  nextHourMessage.innerText = `Next Hour: ${currentWeather.description}`;
+  nextHourMessage.innerText = weatherMinutes > 0 ? `Rain Starting in ${weatherMinutes} minutes.` : `Currently: ${currentCondition.description}`;
 
   for (let i = 0; i < weatherData.length; i++) {
     const progressElement = document.createElement('progress');

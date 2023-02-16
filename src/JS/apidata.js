@@ -210,7 +210,15 @@ function smoothRainData(rainData, windowSize) {
   return smoothedData;
 }
 
-
+function minutesUntilRaining(rainData, threshold) {
+  for (let i = 0; i < rainData.length; i++) {
+    if (rainData[i] >= threshold) {
+      return i;
+    }
+  }
+  
+  return -1;
+}
 
 
 function combineMinutes(weather) {
@@ -257,4 +265,5 @@ export {
   GOOGLE_KEYS,
   getHourlyWeatherData,
   smoothRainData,
+  minutesUntilRaining,
 };
