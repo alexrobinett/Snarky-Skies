@@ -81,7 +81,7 @@ function displaySevenDayForecast(weatherData) {
 
   for (let i = 0; i < weatherData.length; i++) {
     const card = document.createElement('div');
-    card.className = 'glass bg-slate-100/15 drop-shadow-lg grid grid-cols-3 px-4 py-2 my-2 card';
+    card.className = 'glass bg-slate-100/15 drop-shadow-lg grid grid-cols-3 px-4 py-3 my-2 card';
 
     const day = document.createElement('span');
     day.className = 'self-center text-xl';
