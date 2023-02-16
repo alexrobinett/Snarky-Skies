@@ -196,6 +196,7 @@ function combineMinutes(weather) {
   for (let i = 0; i < nextHourData.length - 1; i++) {
       Minutes.push( nextHourData[i].precipitation);
     }
+    console.log(Minutes)
   return Minutes;
 }
 

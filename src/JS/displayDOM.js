@@ -151,6 +151,8 @@ function displayMinutePrecipitationData(weatherData,currentWeather) {
   const minutePrecipContainer = document.getElementById(
     'minute-pricip-container'
   );
+
+  const maxValue = 
   nextHourMessage.innerText = `Next Hour: ${currentWeather.description}`;
 
   for (let i = 0; i < weatherData.length; i++) {
@@ -162,7 +164,7 @@ function displayMinutePrecipitationData(weatherData,currentWeather) {
     );
 
     progressElement.setAttribute('value', `${weatherData[i]}`);
-    progressElement.setAttribute('max', '18');
+    progressElement.setAttribute('max', `${Math.max(...weatherData) > 7.5 ? Math.max(...weatherData) : 7.5}`);
 
     minutePrecipContainer.appendChild(progressElement);
   }
