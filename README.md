@@ -28,7 +28,7 @@ Overall, Snarky Skies is a combination of accurate weather updates, witty messag
 ## Optimizations
 Optimizations:
 
-Storing Funny Messages: In the future, I plan to store the funny messages in a database like MongoDB or PostgressSQL. This will allow for easy updating and management of the message content, enabling more frequent updates with freshed human without having to redeploy the app.
+Storing Funny Messages: In the future, I plan to store the funny messages in a database like MongoDB or PostgressSQL. This will allow for easy updating and management of the message content, enabling more frequent updates with freshed hummor without having to redeploy the app.
 
 Desktop UI: I am planning on expanding the desktop UI to take advantage of the larger screen size, providing users with more details and visualizations.
 
