@@ -2,7 +2,7 @@
 
 The Snarky Skies weather app, was built with vanilla JavaScript and powered by the Google Geocoding API and Open Weather API. This sassy little app delivers up-to-the-minute weather updates, complete with a minutely rain graph to keep you prepared for any rain!
 
-**Link to project:** https://alexrobinett.github.io/Simple-Weather/
+**Link to project:** https://alexrobinett.github.io/Snarky-Skies/
 
 
 <img  align="left" src="https://user-images.githubusercontent.com/59510577/219566128-e37532ef-55b6-4d58-87ef-bad7380dea83.png" height="370">
