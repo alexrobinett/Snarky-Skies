@@ -5,8 +5,8 @@ The Snarky Skies weather app, was built with vanilla JavaScript and powered by t
 **Link to project:** https://alexrobinett.github.io/Simple-Weather/
 
 
-<img  align="left" src="https://user-images.githubusercontent.com/59510577/219566128-e37532ef-55b6-4d58-87ef-bad7380dea83.png" height="470">
-<img  src="https://user-images.githubusercontent.com/59510577/219567945-3c3092e0-3c9b-42f0-9669-62e21fc80046.png" height="470">
+<img  align="left" src="https://user-images.githubusercontent.com/59510577/219566128-e37532ef-55b6-4d58-87ef-bad7380dea83.png" height="370">
+<img  src="https://user-images.githubusercontent.com/59510577/219567945-3c3092e0-3c9b-42f0-9669-62e21fc80046.png" height="370">
 
 &nbsp;
   
