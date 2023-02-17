@@ -187,7 +187,7 @@ function willItRainNextHour(weather) {
   for (let i = 0; i < nextHourData.length; i++) {
     precipPercentage += nextHourData[i].precipitation;
   }
-  return precipPercentage / 61 > 0;
+  return precipPercentage / 61 > 0.1;
 }
 
 function smoothRainData(rainData, windowSize) {
