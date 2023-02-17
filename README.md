@@ -6,7 +6,7 @@ The Snarky Skies weather app, was built with vanilla JavaScript and powered by t
 
 
 <img  align="left" src="https://user-images.githubusercontent.com/59510577/219566128-e37532ef-55b6-4d58-87ef-bad7380dea83.png" height="470">
-<img  align="left" src="https://user-images.githubusercontent.com/59510577/219567945-3c3092e0-3c9b-42f0-9669-62e21fc80046.png" height="470">
+<img  src="https://user-images.githubusercontent.com/59510577/219567945-3c3092e0-3c9b-42f0-9669-62e21fc80046.png" height="470">
 
 &nbsp;
   
@@ -42,5 +42,5 @@ Another area where I faced challenges was in the configuration of Webpack, which
 
 Additionally, I learned a lot about displaying data on the rain graph. Initially, I took the raw rain data per minute, but quickly realized that this approach resulted in a graph that was difficult to read due to the spikes in the data. Through research, I discovered the moving average algorithm, which helped to smooth out the data and set the maximum value of the graph based on the smoothed data. This approach significantly improved the appearance of the graph, making the data more uniform and easier to read.
 
-<img src="https://user-images.githubusercontent.com/59510577/219567536-ca55c781-01a4-43d1-a9a6-af30602c719c.png" height="400">
+<img align="center"  src="https://user-images.githubusercontent.com/59510577/219567536-ca55c781-01a4-43d1-a9a6-af30602c719c.png" height="400">
 
