@@ -1,9 +1,17 @@
-# My Awesome Project
+# Snarky Skies Weather APP
+
 The Snarky Skies weather app, was built with vanilla JavaScript and powered by the Google Geocoding API and Open Weather API. This sassy little app delivers up-to-the-minute weather updates, complete with a minutely rain graph to keep you prepared for any rain!
 
 **Link to project:** https://alexrobinett.github.io/Simple-Weather/
 
-![snarkyskies-](https://user-images.githubusercontent.com/59510577/219566128-e37532ef-55b6-4d58-87ef-bad7380dea83.png)
+
+<img  align="left" src="https://user-images.githubusercontent.com/59510577/219566128-e37532ef-55b6-4d58-87ef-bad7380dea83.png" height="470">
+<img  align="left" src="https://user-images.githubusercontent.com/59510577/219567945-3c3092e0-3c9b-42f0-9669-62e21fc80046.png" height="470">
+
+&nbsp;
+  
+
+
 
 ## How It's Made:
 
@@ -33,3 +41,6 @@ Through this project, I gained valuable experience working with Tailwind CSS, wh
 Another area where I faced challenges was in the configuration of Webpack, which led to some errors in rendering the CSS. However, overcoming these challenges helped me understand the intricacies of bundling and managing dependencies using Webpack.
 
 Additionally, I learned a lot about displaying data on the rain graph. Initially, I took the raw rain data per minute, but quickly realized that this approach resulted in a graph that was difficult to read due to the spikes in the data. Through research, I discovered the moving average algorithm, which helped to smooth out the data and set the maximum value of the graph based on the smoothed data. This approach significantly improved the appearance of the graph, making the data more uniform and easier to read.
+
+<img src="https://user-images.githubusercontent.com/59510577/219567536-ca55c781-01a4-43d1-a9a6-af30602c719c.png" height="400">
+
