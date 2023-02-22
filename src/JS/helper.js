@@ -12,7 +12,6 @@ async function successUserPos(pos) {
       `https://maps.googleapis.com/maps/api/geocode/json?latlng=${pos.coords.latitude},${pos.coords.longitude}2&key=${GOOGLE_KEYS}`
     );
     const data = await response.json();
-    console.log(data);
     userLocation.lat = pos.coords.latitude;
     userLocation.lng = pos.coords.longitude;
     userLocation.city = data.plus_code.compound_code

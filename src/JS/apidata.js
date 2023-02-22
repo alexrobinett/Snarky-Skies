@@ -15,12 +15,10 @@ async function getGeoInfo(location) {
       `https://maps.googleapis.com/maps/api/geocode/json?address=${location}&key=${GOOGLE_KEYS}`
     );
     const data = await response.json();
-    console.log(data);
     const userInputData = {};
     userInputData.lat = data.results[0].geometry.location.lat;
     userInputData.lng = data.results[0].geometry.location.lng;
     userInputData.city = data.results[0].address_components[0].short_name;
-    console.log(userInputData);
     return userInputData;
   } catch (error) {
     console.log(error);

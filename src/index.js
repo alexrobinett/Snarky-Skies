@@ -53,8 +53,6 @@ async function updateWeatherDisplay (){
   let sevenDayWeather = GetDailyWeather(await rawWeatherData);
   let rainData = combineMinutes(await rawWeatherData);
   let minuteData = smoothRainData(rainData, 15)
-  console.log(rainData)
-  console.log(minuteData)
   let hourWeather = getHourlyWeatherData(await rawWeatherData);
   let messages = currentMessages(currentWeather)
 
